@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const user = require('../src/user.js');
+const User = require('../src/user.js');
 
 describe('User', () => {
 
