@@ -6,6 +6,7 @@ class UserRepository {
     const foundUser = this.users.find(user => user.id === userId);
     return foundUser;
   }
+  //findAverageStepGoal()
 }
 
 module.exports = UserRepository;

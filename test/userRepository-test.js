@@ -84,4 +84,36 @@ it('should be able to take in an argument', () => {
       })
   })
 
+  it('should have a method that finds the average step goal of all users', () => {
+    const data = [{
+      "id": 150,
+      "name": "Marceline Lane",
+      "address": "1000 Main Street, Denver, CO 55555",
+      "email": "MarcelineLane@madeup.com",
+      "strideLength": 8,
+      "dailyStepGoal": 8000,
+      "friends": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 375,
+      "name": "Sarah Ball",
+      "address": "2000 Division Ave, Denver, CO 55555",
+      "email": "SarahBall@madeup.com",
+      "strideLength": 4.5,
+      "dailyStepGoal": 10000,
+      "friends": [
+        4,
+        5,
+        6
+      ]
+    }]
+    const userRepository = new UserRepository(data);
+
+    expect(userRepository.findAverageStepGoal()).to.equal(9000);
+  })
+
 })
