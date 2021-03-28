@@ -36,4 +36,9 @@ describe('User', () => {
 
     expect(user.id).to.equal(150);
   })
+
+  it('should have a method to return the user\'s first name', () => {
+
+    expect(user.findUserFirstName()).to.equal('Marceline');
+  })
 })
