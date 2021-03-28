@@ -7,18 +7,18 @@ describe('User', () => {
   let data
   beforeEach(() => {
     data = {
-        "id": 150,
-        "name": "Marceline Lane",
-        "address": "1000 Main Street, Denver, CO 55555",
-        "email": "MarcelineLane@madeup.com",
-        "strideLength": 8,
-        "dailyStepGoal": 8000,
-        "friends": [
-          1,
-          2,
-          3
-        ]
-      };
+      "id": 150,
+      "name": "Marceline Lane",
+      "address": "1000 Main Street, Denver, CO 55555",
+      "email": "MarcelineLane@madeup.com",
+      "strideLength": 8,
+      "dailyStepGoal": 8000,
+      "friends": [
+        1,
+        2,
+        3
+      ]
+    };
     user = new User(data);
   })
 
