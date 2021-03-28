@@ -7,7 +7,8 @@ describe('UserRepository', () => {
   let userRepository;
 
   beforeEach(() => {
-    data = [{
+    data = [
+      {
         "id": 150,
         "name": "Marceline Lane",
         "address": "1000 Main Street, Denver, CO 55555",
