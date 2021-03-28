@@ -9,4 +9,12 @@ describe('User', () => {
 
     expect(User).to.be.a('function');
   })
+
+  it('should be an instance of User', () => {
+    const user = new User();
+
+    expect(user).to.be.an.instanceof(User);
+  })
+
+  
 })
