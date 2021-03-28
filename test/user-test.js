@@ -3,21 +3,10 @@ const expect = chai.expect;
 const User = require('../src/user.js');
 
 describe('User', () => {
-
-  it('should be function', () => {
-    const user = new User();
-
-    expect(User).to.be.a('function');
-  })
-
-  it('should be an instance of User', () => {
-    const user = new User();
-
-    expect(user).to.be.an.instanceof(User);
-  })
-
-  it('should be able to take in userData object', () => {
-    const data = {
+  let user
+  let data
+  beforeEach(() => {
+    data = {
         "id": 150,
         "name": "Marceline Lane",
         "address": "1000 Main Street, Denver, CO 55555",
@@ -30,7 +19,20 @@ describe('User', () => {
           3
         ]
       };
-    const user = new User(data);
+    user = new User(data);
+  })
+
+  it('should be function', () => {
+
+    expect(User).to.be.a('function');
+  })
+
+  it('should be an instance of User', () => {
+
+    expect(user).to.be.an.instanceof(User);
+  })
+
+  it('should be able to take in userData object', () => {
 
     expect(user.id).to.equal(150);
   })
