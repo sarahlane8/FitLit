@@ -15,11 +15,11 @@ function manageLoadingFunctions() {
 }
 
 function displayUserGreeting(user) {
-  header.innerHTML = `<h1>Hello, ${user1.findUserFirstName()}</h1>`
+  header.innerHTML = `<h1>Hello, ${user.findUserFirstName()}</h1>`
 }
 
 function displayUserInfoCard(user) {
-  let userFriendList =[];
+  let userFriendList = [];
   user.friends.forEach(friend => userFriendList.push(userRepository.findUserData(friend)));
   let userFriendNames = userFriendList.map(friend => friend.name)
   userInfoCard.innerHTML =
