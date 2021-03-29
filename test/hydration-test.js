@@ -22,9 +22,14 @@ describe('hydration', () => {
         "userID": 1,
         "date": "2019/06/20",
         "numOunces": 41
+      },
+      {
+        "userID": 2,
+        "date": "2019/06/20",
+        "numOunces": 41
       }
     ]
-    hydration = new Hydration()
+    hydration = new Hydration(hydrationData)
   })
 
   it('should be a function', () => {
@@ -35,5 +40,10 @@ describe('hydration', () => {
   it('should be an instance of Hydration', () => {
 
     expect(hydration).to.be.an.instanceof(Hydration);
+  })
+
+  it('should have a method that returns average fluid oz consumption for all time for a user', () => {
+
+    expect(hydration.findTotalWaterConsumptionAverage(1)).to.equal(44)
   })
 })
