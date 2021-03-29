@@ -1,7 +1,7 @@
 const header = document.getElementById('header');
 const userInfoCard = document.getElementById('userInfoCard');
 const userStepGoals = document.getElementById('userStepGoals');
-const userRepository = new UserRepository()
+const userRepository = new UserRepository(userData)
 const user1 = new User(userData[0])
 
 //event listeners
@@ -19,17 +19,18 @@ function displayUserGreeting(user) {
 }
 
 function displayUserInfoCard(user) {
+  let userFriendList =[];
+  user.friends.forEach(friend => userFriendList.push(userRepository.findUserData(friend)));
+  let userFriendNames = userFriendList.map(friend => friend.name)
   userInfoCard.innerHTML =
-`
-<h3>${user.name}</h3>
-<p>Address: ${user.address}</p>
-<p>Daily Step Goal: ${user.dailyStepGoal}</p>
-<p>Email: ${user.email}</p>
-<p>You are friends with: </p>
-<p>Your stride length: ${user.strideLength}</p>
-
-`
-
+    `
+    <h3>${user.name}</h3>
+    <p>Address: ${user.address}</p>
+    <p>Daily Step Goal: ${user.dailyStepGoal}</p>
+    <p>Email: ${user.email}</p>
+    <p>You are friends with: ${userFriendNames.join(', ')} </p>
+    <p>Your stride length: ${user.strideLength}</p>
+    `
 }
 
 function displayUserStepGoal() {
