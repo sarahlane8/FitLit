@@ -33,8 +33,10 @@ function displayUserInfoCard(user) {
     `
 }
 
-function displayUserStepGoal() {
-
+function displayUserStepGoal(user) {
+  userStepGoals.innerHTML =
+    `
+    <h3>Your daily step goal is: ${user.dailyStepGoal}</h3>
+    <h4>The step goal among all users is: ${userRepository.findAverageStepGoal()}</h4>
+    `
 }
-//on page load, takes a user and displays their name in header accessing user class
-//on page load, takes a user and displays their step userStepGoals
