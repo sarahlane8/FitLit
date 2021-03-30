@@ -17,17 +17,12 @@ beforeEach(() => {
       "userID": 1,
       "date": "2019/06/18",
       "numOunces": 53
-    },
-    {
-      "userID": 1,
-      "date": "2019/06/20",
-      "numOunces": 41
-    },
-    {
-      "userID": 2,
-      "date": "2019/06/20",
-      "numOunces": 41
     }
+    // {
+    //   "userID": 1,
+    //   "date": "2019/06/20",
+    //   "numOunces": 41
+    // },
   ]
   hydration = new Hydration(hydrationData)
 })
@@ -41,8 +36,21 @@ it('should be an instance of Hydration', () => {
 })
 
 it('should be able to take in hydrationData object', () => {
-  expect(hydration.hydrationData).to.
-})
+
+  expect(hydration.userHydrationData).to.deep.equal(
+    [
+      {
+      "userID": 1,
+      "date": "2019/06/15",
+      "numOunces": 37
+    },
+    {
+      "userID": 1,
+      "date": "2019/06/18",
+      "numOunces": 53
+    }
+  ])
+  })
 
 it.skip('should have a method that returns average fluid oz consumption for all time for a user', () => {
   expect(hydration.findTotalWaterConsumptionAverage(1)).to.equal(44)
