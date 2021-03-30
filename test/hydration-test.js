@@ -32,8 +32,19 @@ beforeEach(() => {
   hydration = new Hydration(hydrationData)
 })
 
-it.skip('should have a method that returns average fluid oz consumption for all time for a user', () => {
+it('should be a function', () => {
+  expect(Hydration).to.be.a('function');
+})
 
+it('should be an instance of Hydration', () => {
+  expect(hydration).to.be.an.instanceof(Hydration);
+})
+
+it('should be able to take in hydrationData object', () => {
+  expect(hydration.hydrationData).to.
+})
+
+it.skip('should have a method that returns average fluid oz consumption for all time for a user', () => {
   expect(hydration.findTotalWaterConsumptionAverage(1)).to.equal(44)
 })
 })

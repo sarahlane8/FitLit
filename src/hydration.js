@@ -1,8 +1,8 @@
 class Hydration {
   constructor() {
-
+    
   }
-  // 
+  //
   // findTotalWaterConsumptionAverage(userId) {
   //   let userHydrationData = this.hydrationData.filter(user => user.userID === userId)
   //   let userTotalHydrationAvg = userHydrationData.reduce((acc, userEntry) => {
