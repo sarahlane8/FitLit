@@ -4,9 +4,16 @@ class Hydration {
   }
   findTotalWaterConsumptionAverage(userId) {
     let userHydrationData = this.hydrationData.filter(user => user.userID === userId)
-    let userTotalHydrationAvg = 
+    let userTotalHydrationAvg = userHydrationData.reduce((acc, userEntry) => {
+      acc += userEntry.numOunces;
+      return acc;
+    }, 0);
+    return Math.round(userTotalHydrationAvg/userHydrationData.length)
+    }
+
   }
-}
+
+
 
 if (typeof module !== 'undefined') {
   module.exports = Hydration;
