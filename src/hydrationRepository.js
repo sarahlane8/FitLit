@@ -2,7 +2,12 @@ class HydrationRepository {
   constructor(hydrationData) {
     this.hydrationData = hydrationData;
   }
-  //method to filter for 1 user
+
+  findHydrationUserData(userId) {
+    let userHydrationData = this.hydrationData.filter(user => user.userID === userId)
+    return userHydrationData;
+  }
+  
 }
 
 
