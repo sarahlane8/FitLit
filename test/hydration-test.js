@@ -53,6 +53,13 @@ it('should be able to take in hydrationData object', () => {
   })
 
 it('should have a method that returns average fluid oz consumption for all time for a user', () => {
-  expect(hydration.findTotalWaterConsumptionAverage(1)).to.equal(45)
+  expect(hydration.findTotalWaterConsumptionAverage()).to.equal(45)
 })
+
+it('should have a method that returns fluid consumption for a specific date', () => {
+  expect(hydration.findWaterConsumptionByDate("2019/06/18")).to.equal(53);
+})
+
+
+
 })
