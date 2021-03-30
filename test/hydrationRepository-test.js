@@ -1,10 +1,10 @@
 const chai = require('chai');
 const expect = chai.expect;
-const Hydration = require('../src/Hydration');
+const HydrationRepository = require('../src/HydrationRepository');
 
-describe('hydration', () => {
+describe('HydrationRepository', () => {
   let hydrationData
-  let hydration
+  let hydrationRepository
 
   beforeEach(() => {
     hydrationData = [
@@ -29,21 +29,21 @@ describe('hydration', () => {
         "numOunces": 41
       }
     ]
-    hydration = new Hydration(hydrationData)
+    hydrationRepository = new HydrationRepository(hydrationData)
   })
 
   it('should be a function', () => {
 
-    expect(Hydration).to.be.a('function');
+    expect(HydrationRepository).to.be.a('function');
   })
 
-  it('should be an instance of Hydration', () => {
+  it('should be an instance of HydrationRepository', () => {
 
-    expect(hydration).to.be.an.instanceof(Hydration);
+    expect(hydrationRepository).to.be.an.instanceof(HydrationRepository);
   })
 
   it('should have a method that returns average fluid oz consumption for all time for a user', () => {
 
-    expect(hydration.findTotalWaterConsumptionAverage(1)).to.equal(44)
+    expect(hydrationRepository.findTotalWaterConsumptionAverage(1)).to.equal(44)
   })
 })
