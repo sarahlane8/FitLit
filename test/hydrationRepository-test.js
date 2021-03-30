@@ -41,9 +41,5 @@ describe('HydrationRepository', () => {
 
     expect(hydrationRepository).to.be.an.instanceof(HydrationRepository);
   })
-
-  it('should have a method that returns average fluid oz consumption for all time for a user', () => {
-
-    expect(hydrationRepository.findTotalWaterConsumptionAverage(1)).to.equal(44)
-  })
+  
 })

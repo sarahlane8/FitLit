@@ -2,7 +2,7 @@ const header = document.getElementById('header');
 const userInfoCard = document.getElementById('userInfoCard');
 const userStepGoals = document.getElementById('userStepGoals');
 const userRepository = new UserRepository(userData)
-const user1 = new User(userData[0])
+const user1 = new User(userData[0])//change this to userRepository[0]?
 
 //event listeners
 window.addEventListener('load', manageLoadingFunctions)
