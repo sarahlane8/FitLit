@@ -52,7 +52,7 @@ it('should be able to take in hydrationData object', () => {
   ])
   })
 
-it.skip('should have a method that returns average fluid oz consumption for all time for a user', () => {
-  expect(hydration.findTotalWaterConsumptionAverage(1)).to.equal(44)
+it('should have a method that returns average fluid oz consumption for all time for a user', () => {
+  expect(hydration.findTotalWaterConsumptionAverage(1)).to.equal(45)
 })
 })
