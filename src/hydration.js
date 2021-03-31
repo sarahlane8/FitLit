@@ -1,3 +1,5 @@
+var dayjs = require('dayjs');
+
 class Hydration {
   constructor(hydrationData) {
     this.userHydrationData = hydrationData;
@@ -14,6 +16,10 @@ class Hydration {
     const waterDate = this.userHydrationData.find(user => user.date === date);
     return waterDate.numOunces;
   }
+
+  //findDailyWaterConsumptionByWeek(date) {
+
+// }
 }
 
 

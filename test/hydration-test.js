@@ -60,6 +60,8 @@ it('should have a method that returns fluid consumption for a specific date', ()
   expect(hydration.findWaterConsumptionByDate("2019/06/18")).to.equal(53);
 })
 
-
+it('should have a method that returns fluid consumption for a specific week', () => {
+  // expect(findDailyWaterConsumptionByWeek("2019/06/18")).to.deep.equal([37, 53])
+})
 
 })
