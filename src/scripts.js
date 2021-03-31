@@ -1,8 +1,10 @@
 const header = document.getElementById('header');
 const userInfoCard = document.getElementById('userInfoCard');
 const userStepGoals = document.getElementById('userStepGoals');
-const userRepository = new UserRepository(userData)
-const user1 = new User(userData[0])//change this to userRepository[0]?
+const userRepository = new UserRepository(userData);
+const user1 = new User(userRepository[0]);
+const userDailyWater = document.getElementById('userDailyWater');
+const userWeeklyWater = document.getElementById('userWeeklyWater');
 
 //event listeners
 window.addEventListener('load', manageLoadingFunctions)
