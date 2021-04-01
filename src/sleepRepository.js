@@ -1,6 +1,6 @@
 class SleepRepository {
-  constructor() {
-
+  constructor(sleepData) {
+    this.sleepData = sleepData
   }
 }
 

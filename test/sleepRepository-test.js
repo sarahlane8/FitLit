@@ -43,6 +43,11 @@ describe('SleepRepository', () => {
 
   it('should be able to take in sleep data', () => {
 
-    expect(sleepRepository[0]).to.deep.equal(sleepData[0]);
+    expect(sleepRepository.sleepData[0]).to.deep.equal(sleepData[0]);
+  })
+
+  it('should have a method to find the average sleep quality for all users', () => {
+
+    expect(sleepRepository.findAverageSleepQuality()).to.equal(3.9)
   })
 })
