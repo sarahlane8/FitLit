@@ -17,7 +17,7 @@ function manageLoadingFunctions() {
   displayUserInfoCard(user1);
   displayUserStepGoal(user1);
   displayUserDailyWater("2019/06/15");
-  // displayUserWeeklyWater(user1);
+  displayUserWeeklyWater("2019/06/28");
 }
 
 function displayUserGreeting(user) {
@@ -52,5 +52,15 @@ userDailyWater.innerHTML =
 `
 <h3>You have drank ${dailyWater} ounces of water today!</h3>
 `
+}
 
+function displayUserWeeklyWater(date) {
+  const weekData = hydration.findDailyWaterConsumptionByWeek(date);
+  let userWeeklyWaterData = '';
+  userWeeklyWaterData += weekData.map(day => ` On ${day.date} you drank ${day.numOunces} ounces of water`);
+  console.log(userWeeklyWaterData);
+  userWeeklyWater.innerHTML =
+  `
+  <h3>${userWeeklyWaterData}</h3>
+  `
 }
