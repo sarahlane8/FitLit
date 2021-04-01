@@ -12,7 +12,7 @@ describe('SleepRepository', () => {
         "userID": 1,
         "date": "2019/06/15",
         "hoursSlept": 8.1,
-        "sleepQuality": 3.2
+        "sleepQuality": 2.9
       },
       {
         "userID": 2,
@@ -64,8 +64,12 @@ describe('SleepRepository', () => {
   })
 
   it('should have a method to return an array of sleepData objects for a week when given a date', () => {
-    console.log([sleepData[0],sleepData[1],sleepData[2]])
-    console.log()
+
     expect(sleepRepository.filterSleepDataByWeek("2019/06/15")).to.deep.equal([sleepData[0],sleepData[1],sleepData[2]])
+  })
+
+  it('should have a method to return an array of userIds that had a average sleep quality of more than 3 in a given week', () => {
+
+    expect(sleepRepository.findUsersWithQualitySleep("2019/06/15").to.deep.equal([2, 3]))
   })
 })
