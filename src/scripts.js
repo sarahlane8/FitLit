@@ -46,12 +46,13 @@ function displayUserStepGoal(user) {
     <h4>The step goal among all users is: ${userRepository.findAverageStepGoal()}</h4>
     `
 }
+
 function displayUserDailyWater(date) {
-const dailyWater = hydration.findWaterConsumptionByDate(date)
-userDailyWater.innerHTML =
-`
-<h3>You have drank ${dailyWater} ounces of water today!</h3>
-`
+  const dailyWater = hydration.findWaterConsumptionByDate(date)
+  userDailyWater.innerHTML =
+    `
+    <h3>You have drank ${dailyWater} ounces of water today!</h3>
+    `
 }
 
 function displayUserWeeklyWater(date) {
