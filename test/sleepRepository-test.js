@@ -10,6 +10,7 @@ describe('sleepRepository', () => {
   })
 
   it('should be an instance of the SleepRepository class', () => {
+    const sleepRepository = new SleepRepository();
 
     expect(sleepRepository).to.be.an.instanceof(SleepRepository);
   })
