@@ -1,4 +1,6 @@
-var dayjs = require('dayjs');
+const dayjs = require('dayjs');
+const isBetween = require('dayjs/plugin/isBetween');
+dayjs.extend(isBetween);
 
 class Hydration {
   constructor(hydrationData) {
@@ -17,11 +19,13 @@ class Hydration {
     return waterDate.numOunces;
   }
 
-  //findDailyWaterConsumptionByWeek(date) {
+  findDailyWaterConsumptionByWeek(date) {
+    const weekBeginningDate = dayjs(date).subtract(6, 'day');
+    const weekEndingDate = dayjs(date);
+    return this.userHydrationData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'))
+  }
 
-// }
 }
-
 
 
 
