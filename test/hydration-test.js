@@ -1,7 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
 const Hydration = require('../src/Hydration');
-const dayjs = require('dayjs');
 
 describe('Hydration', () => {
   const hydrationData = [
@@ -35,7 +34,7 @@ describe('Hydration', () => {
   it('should be able to take in hydrationData object', () => {
 
     expect(hydration.userHydrationData).to.deep.equal(hydrationData);
-    })
+  })
 
   it('should have a method that returns average fluid oz consumption for all time for a user', () => {
 
