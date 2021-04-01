@@ -42,8 +42,12 @@ describe('HydrationRepository', () => {
     expect(hydrationRepository).to.be.an.instanceof(HydrationRepository);
   })
 
-  it('should have a method that returns average fluid oz consumption for all time for a user', () => {
-
-    expect(hydrationRepository.findTotalWaterConsumptionAverage(1)).to.equal(44)
+  it('should have a method that returns an array based off user ID', () => {
+    expect(hydrationRepository.findHydrationUserData(2)).to.deep.equal([{
+      "userID": 2,
+      "date": "2019/06/20",
+      "numOunces": 41
+    }]);
   })
+
 })
