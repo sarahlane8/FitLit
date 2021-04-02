@@ -7,6 +7,10 @@ class SleepRepository {
     this.sleepData = sleepData
   }
 
+  findSleepUserData(userId) {
+    return this.sleepData.filter(user => user.userID === userId)
+  }
+
   findAverageSleepQuality() {
     const combinedSleepQuality = this.sleepData.reduce((acc, userObject) => {
       return acc += userObject.sleepQuality
