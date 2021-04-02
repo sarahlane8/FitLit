@@ -65,7 +65,7 @@ describe('SleepRepository', () => {
 
   it('should have a method to return an array of sleepData objects for a week when given a date', () => {
 
-    expect(sleepRepository.filterSleepDataByWeek("2019/06/15")).to.deep.equal([sleepData[0],sleepData[1],sleepData[2]])
+    expect(sleepRepository.filterSleepDataByWeek("2019/06/15")).to.deep.equal([sleepData[0], sleepData[1], sleepData[2]])
   })
 
   it('should have a method to return an array of userIds that had a average sleep quality of more than 3 in a given week', () => {
@@ -75,7 +75,7 @@ describe('SleepRepository', () => {
 
   it('should have a method to return an array of sleepData objects for a particular day', () => {
 
-    expect(sleepRepository.filterSleepDataByDate("2019/06/30")).to.deep.equal([sleepData[3],sleepData[4]])
+    expect(sleepRepository.filterSleepDataByDate("2019/06/30")).to.deep.equal([sleepData[3], sleepData[4]])
   })
 
   it('should have a method that returns the userID(s) of the user that slept the most hours on a given a date', () => {
