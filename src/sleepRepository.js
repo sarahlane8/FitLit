@@ -24,11 +24,30 @@ class SleepRepository {
 // average to 3, and if greater push userid into an array
   findUsersWithQualitySleep(date) {
     const weekOfSleepDataObjects = this.filterSleepDataByWeek(date)
-    let usersWithQualitySleep = [];
-    weekOfSleepDataObjects.forEach((object => {
+    const result = weekOfSleepDataObjects.reduce((acc, user) => {
+      const { userID, hoursSlept = 0, sleepQuality = 0 } = user;
+      if (!acc[userID]) {
+        acc[userID] = {
+          hoursSum: hoursSlept,
+          qualitySum: sleepQuality,
+          numOfDays: 1
+        }
+      }
 
-    });
-//create a method to filter through an array of user obj with givin user id
+      acc[userID].hoursSum += hoursSlept;
+      acc[userID].qualitySum += sleepQuality;
+      acc[userID].numOfDays++;
+
+      return acc;
+    }, {});
+    return Object.keys(result)
+      .filter(userID => (result[userID].qualitySum / result[userID].numOfDays) > 3)
+      .map(userID => parseInt(userID));
+//we want to check if acc has key of current user ID
+//if it does have that userID, add that currentUser's sleep quality to the existing userID's sleep quality value
+//if it does have that userID, add that currentUser's hours slept to the existing userID's hours slept value
+//if it does have that userID, increment that user's ID day counter
+//if the avg sleep quality is greater than 3, hold onto that userID
   }
 }
 if (typeof module !== 'undefined') {
