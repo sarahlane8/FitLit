@@ -60,7 +60,7 @@ describe('SleepRepository', () => {
 
   it('should have a method to find the average sleep quality for all users', () => {
 
-    expect(sleepRepository.findAverageSleepQuality()).to.equal(3.4)
+    expect(sleepRepository.findAverageSleepQuality()).to.equal(3.3)
   })
 
   it('should have a method to return an array of sleepData objects for a week when given a date', () => {

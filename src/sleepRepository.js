@@ -20,8 +20,7 @@ class SleepRepository {
     const weekEndingDate = dayjs(date);
     return this.sleepData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'))
   }
-//take data by user id, and reduce sleep quality to find average. Then compare
-// average to 3, and if greater push userid into an array
+
   findUsersWithQualitySleep(date) {
     const weekOfSleepDataObjects = this.filterSleepDataByWeek(date)
     const result = weekOfSleepDataObjects.reduce((acc, user) => {
@@ -43,11 +42,6 @@ class SleepRepository {
     return Object.keys(result)
       .filter(userID => (result[userID].qualitySum / result[userID].numOfDays) > 3)
       .map(userID => parseInt(userID));
-//we want to check if acc has key of current user ID
-//if it does have that userID, add that currentUser's sleep quality to the existing userID's sleep quality value
-//if it does have that userID, add that currentUser's hours slept to the existing userID's hours slept value
-//if it does have that userID, increment that user's ID day counter
-//if the avg sleep quality is greater than 3, hold onto that userID
   }
 }
 if (typeof module !== 'undefined') {
