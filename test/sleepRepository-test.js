@@ -72,4 +72,15 @@ describe('SleepRepository', () => {
 
     expect(sleepRepository.findUsersWithQualitySleep("2019/06/15")).to.deep.equal([2, 3])
   })
+
+  it('should have a method to return an array of sleepData objects for a particular day', () => {
+
+    expect(sleepRepository.filterSleepDataByDate("2019/06/30")).to.deep.equal([sleepData[3],sleepData[4]])
+  })
+
+  it('should have a method that returns the userID(s) of the user that slept the most hours on a given a date', () => {
+
+    expect(sleepRepository.findUserWhoSleptLongest("2019/06/15")).to.deep.equal([2])
+  })
+
 })

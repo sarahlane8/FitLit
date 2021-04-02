@@ -43,6 +43,19 @@ class SleepRepository {
       .filter(userID => (result[userID].qualitySum / result[userID].numOfDays) > 3)
       .map(userID => parseInt(userID));
   }
+  filterSleepDataByDate(date) {
+    return this.sleepData.filter(object => object.date === date)
+  };
+
+  findUserWhoSleptLongest(date) {
+    const usersByDate = this.filterSleepDataByDate(date)
+    usersByDate.sort((a, b) => {
+      return b.hoursSlept - a.hoursSlept
+    })
+    const mostHours = usersByDate[0].hoursSlept;
+    const usersWithMostHours = usersByDate.filter(user => user.hoursSlept === mostHours);
+    return usersWithMostHours.map(user => user.userID)
+  }
 }
 if (typeof module !== 'undefined') {
   module.exports = SleepRepository;
