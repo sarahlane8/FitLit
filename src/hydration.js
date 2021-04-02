@@ -1,6 +1,6 @@
-// const dayjs = require('dayjs');
-// const isBetween = require('dayjs/plugin/isBetween');
-// dayjs.extend(isBetween);
+const dayjs = require('dayjs');
+const isBetween = require('dayjs/plugin/isBetween');
+dayjs.extend(isBetween);
 
 class Hydration {
   constructor(hydrationData) {
