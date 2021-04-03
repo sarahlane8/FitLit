@@ -47,4 +47,9 @@ describe('Sleep', () => {
 
     expect(sleep.findAverageSleepQuality()).to.equal(3.1);
   })
+
+  it('should be able to return hours slept for a particular date', () => {
+
+    expect(sleep.findHoursSleptByDate("2019/06/15")).to.equal(8.1)
+  })
 })
