@@ -10,7 +10,26 @@ describe('Sleep', () => {
       "date": "2019/06/15",
       "hoursSlept": 8.1,
       "sleepQuality": 2.9
-    },{
+    },
+    {
+      "userID": 1,
+      "date": "2019/06/16",
+      "hoursSlept": 9.1,
+      "sleepQuality": 1.9
+    },
+    {
+      "userID": 1,
+      "date": "2019/06/17",
+      "hoursSlept": 6.4,
+      "sleepQuality": 2.5
+    },
+    {
+      "userID": 1,
+      "date": "2019/06/18",
+      "hoursSlept": 9.2,
+      "sleepQuality": 3.7
+    },
+    {
       "userID": 1,
       "date": "2019/06/30",
       "hoursSlept": 7.4,
@@ -40,12 +59,12 @@ describe('Sleep', () => {
 
   it('should be able to find the avg number of hours slept per day for a user', () => {
 
-    expect(sleep.findAverageHoursSlept()).to.equal(7.8);
+    expect(sleep.findAverageHoursSlept()).to.equal(8);
   })
 
   it('should be able to find the avg sleep quality per day for a user', () => {
 
-    expect(sleep.findAverageSleepQuality()).to.equal(3.1);
+    expect(sleep.findAverageSleepQuality()).to.equal(2.8);
   })
 
   it('should be able to return hours slept for a particular date', () => {
@@ -56,5 +75,14 @@ describe('Sleep', () => {
   it('should be able to return sleep quality for partucular date', () => {
 
     expect(sleep.findSleepQualityByDate("2019/06/15")).to.equal(2.9)
+  })
+
+  it('should be able to return an array of sleep objects for a week when given a date', () => {
+
+    expect(sleep.filterSleepDataByWeek("2019/06/18")).to.deep.equal([userSleepData[0], userSleepData[1], userSleepData[2], userSleepData[3]])
+  })
+  it('should be able to return hours slept for each day for a given week', () => {
+
+    expect(sleep.findDailyHoursSleptByWeek("2019/06/18").to.equal())
   })
 })

@@ -25,9 +25,16 @@ class Sleep {
     const userDataByDate = this.userData.filter(day => day.date === date)
     return userDataByDate[0].hoursSlept
   }
+
   findSleepQualityByDate(date) {
     const userDataByDate = this.userData.filter(day => day.date === date)
     return userDataByDate[0].sleepQuality
+  }
+
+  filterSleepDataByWeek(date) {
+    const weekBeginningDate = dayjs(date).subtract(6, 'day');
+    const weekEndingDate = dayjs(date);
+    return this.userData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'))
   }
 }
 
