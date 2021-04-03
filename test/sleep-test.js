@@ -1,4 +1,5 @@
 const chai = require('chai');
+const expect = chai.expect;
 const Sleep = require('../src/sleep');
 const SleepRepository = require('../src/sleepRepository');
 
@@ -22,5 +23,18 @@ describe('Sleep', () => {
     sleep = new Sleep(userSleepData)
   })
 
-  
+  it('should be a function', () => {
+
+    expect(Sleep).to.be.a('function');
+  })
+
+  it('should be an instance of the Sleep class', () => {
+
+    expect(sleep).to.be.an.instanceof(Sleep);
+  })
+
+  it('should be able to take in an array of user data', () => {
+
+    expect(sleep.userData).to.deep.equal(userSleepData)
+  })
 })
