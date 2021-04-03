@@ -83,6 +83,7 @@ describe('Sleep', () => {
   })
   it('should be able to return hours slept for each day for a given week', () => {
 
-    expect(sleep.findDailyHoursSleptByWeek("2019/06/18").to.equal())
+    expect(sleep.findDailyHoursSleptByWeek("2019/06/18")).to.deep.equal
+      ({"2019/06/15": 8.1, "2019/06/16": 9.1, "2019/06/17": 6.4, "2019/06/18": 9.2})
   })
 })

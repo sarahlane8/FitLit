@@ -36,6 +36,15 @@ class Sleep {
     const weekEndingDate = dayjs(date);
     return this.userData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'))
   }
+
+  findDailyHoursSleptByWeek(date) {
+    const weekOfSleepDataObjects = this.filterSleepDataByWeek(date)
+    const result = weekOfSleepDataObjects.reduce((acc, user) => {
+      acc[user.date] = user.hoursSlept;
+      return acc
+    }, {})
+    return result;
+  }
 }
 
 
