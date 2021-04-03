@@ -42,4 +42,9 @@ describe('Sleep', () => {
 
     expect(sleep.findAverageHoursSlept()).to.equal(7.8);
   })
+
+  it('should be able to find the avg sleep quality per day for a user', () => {
+
+    expect(sleep.findAverageSleepQuality()).to.equal(3.1);
+  })
 })

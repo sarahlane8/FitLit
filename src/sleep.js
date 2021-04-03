@@ -12,6 +12,12 @@ class Sleep {
     }, 0)
     return Math.round((totalHoursSlept / this.userData.length) * 10) / 10
   }
+  findAverageSleepQuality() {
+    const totalQualityOfSleep = this.userData.reduce((acc, day) => {
+      return acc + day.sleepQuality
+    }, 0)
+    return Math.round((totalQualityOfSleep / this.userData.length) * 10) / 10
+  }
 }
 
 
