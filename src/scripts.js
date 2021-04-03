@@ -7,6 +7,11 @@ const hydrationRepository = new HydrationRepository(hydrationData);
 const hydration = new Hydration(hydrationRepository.findHydrationUserData(1));
 const userDailyWater = document.getElementById('userDailyWater');
 const userWeeklyWater = document.getElementById('userWeeklyWater');
+const sleepRepository = new SleepRepository(sleepData)
+const sleep = new Sleep(sleepRepository.findSleepUserData(1))
+const userTodaySleep = document.getElementById('userTodaySleep');
+const userWeeklySleep = document.getElementById('userWeeklySleep');
+const userSleepAverage = document.getElementById('userSleepAverage');
 
 //event listeners
 window.addEventListener('load', manageLoadingFunctions)
