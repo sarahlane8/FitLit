@@ -81,9 +81,16 @@ describe('Sleep', () => {
 
     expect(sleep.filterSleepDataByWeek("2019/06/18")).to.deep.equal([userSleepData[0], userSleepData[1], userSleepData[2], userSleepData[3]])
   })
+
   it('should be able to return hours slept for each day for a given week', () => {
 
     expect(sleep.findDailyHoursSleptByWeek("2019/06/18")).to.deep.equal
       ({"2019/06/15": 8.1, "2019/06/16": 9.1, "2019/06/17": 6.4, "2019/06/18": 9.2})
+  })
+
+  it('should be able to return sleep quality for each day of a given week', () => {
+
+    expect(sleep.findDailySleepQualityByWeek("2019/06/18")).to.deep.equal
+      ({"2019/06/15": 2.9, "2019/06/16": 1.9, "2019/06/17": 2.5, "2019/06/18": 3.7})
   })
 })
