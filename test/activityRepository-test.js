@@ -11,5 +11,7 @@ describe('ActivityRepository', () => {
     activityRepository = new ActivityRepository(activityData);
   })
 
-
+  it('should be a function', () => {
+    expect(ActivityRepository).to.be.a('function');
+  })
 })
