@@ -7,6 +7,11 @@ const hydrationRepository = new HydrationRepository(hydrationData);
 const hydration = new Hydration(hydrationRepository.findHydrationUserData(1));
 const userDailyWater = document.getElementById('userDailyWater');
 const userWeeklyWater = document.getElementById('userWeeklyWater');
+const sleepRepository = new SleepRepository(sleepData)
+const sleep = new Sleep(sleepRepository.findSleepUserData(1))
+const userTodaySleep = document.getElementById('userTodaySleep');
+const userWeeklyHoursSlept = document.getElementById('userWeeklyHoursSlept');
+const userSleepAverage = document.getElementById('userSleepAverage');
 
 //event listeners
 window.addEventListener('load', manageLoadingFunctions)
@@ -16,8 +21,11 @@ function manageLoadingFunctions() {
   displayUserGreeting(user1);
   displayUserInfoCard(user1);
   displayUserStepGoal(user1);
-  displayUserDailyWater("2019/06/15");
-  displayUserWeeklyWater("2019/06/28");
+  displayUserDailyWater("2019/09/22");
+  displayUserWeeklyWater("2019/09/22");
+  displayUserTodaySleep("2019/09/22");
+  displayUserWeeklySleep("2019/09/22")
+  displayUserSleepAverage()
 }
 
 function displayUserGreeting(user) {
@@ -51,7 +59,7 @@ function displayUserDailyWater(date) {
   const dailyWater = hydration.findWaterConsumptionByDate(date)
   userDailyWater.innerHTML =
     `
-    <h3>You have drank ${dailyWater} ounces of water today!</h3>
+    <h3>You drank ${dailyWater} ounces of water today!</h3>
     `
 }
 
@@ -59,9 +67,41 @@ function displayUserWeeklyWater(date) {
   const weekData = hydration.findDailyWaterConsumptionByWeek(date);
   let userWeeklyWaterData = '';
   userWeeklyWaterData += weekData.map(day => ` On ${day.date} you drank ${day.numOunces} ounces of water`);
-  console.log(userWeeklyWaterData);
   userWeeklyWater.innerHTML =
   `
   <h3>${userWeeklyWaterData}</h3>
+  `
+}
+
+function displayUserTodaySleep(date) {
+  const dailySleepHours = sleep.findHoursSleptByDate(date);
+  const dailySleepQuality = sleep.findSleepQualityByDate(date);
+  userTodaySleep.innerHTML =
+  `
+  <h3>Last night you slept ${dailySleepHours} hours! </br> Your sleep quality was ${dailySleepQuality}! </h3>
+  `
+}
+
+function displayUserWeeklySleep(date) {
+  const weeklyHoursSlept = sleep.findDailyHoursSleptByWeek(date);
+  const weeklySleepQuality = sleep.findDailySleepQualityByWeek(date);
+  let userWeeklySleepData = '';
+  const keys = Object.keys(weeklyHoursSlept);
+  keys.map(day => {
+    userWeeklySleepData += ` On ${day} you slept ${weeklyHoursSlept[day]} hours and your sleep quality was ${weeklySleepQuality[day]} </br>`
+    return userWeeklySleepData;
+  })
+  userWeeklyHoursSlept.innerHTML =
+  `
+  <h3>${userWeeklySleepData}</h3>
+  `
+}
+
+function displayUserSleepAverage() {
+  const userAverageSleepHours = sleep.findAverageHoursSlept();
+  const userAverageSleepQuality = sleep.findAverageSleepQuality();
+  userSleepAverage.innerHTML =
+  `
+  <h3>On average, you sleep ${userAverageSleepHours} hours a night! Your average sleep quality is ${userAverageSleepQuality}!</h3>
   `
 }
