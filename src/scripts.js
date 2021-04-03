@@ -25,6 +25,7 @@ function manageLoadingFunctions() {
   displayUserWeeklyWater("2019/09/22");
   displayUserTodaySleep("2019/09/22");
   displayUserWeeklySleep("2019/09/22")
+  displayUserSleepAverage()
 }
 
 function displayUserGreeting(user) {
@@ -93,5 +94,14 @@ function displayUserWeeklySleep(date) {
   userWeeklyHoursSlept.innerHTML =
   `
   <h3>${userWeeklySleepData}</h3>
+  `
+}
+
+function displayUserSleepAverage() {
+  const userAverageSleepHours = sleep.findAverageHoursSlept();
+  const userAverageSleepQuality = sleep.findAverageSleepQuality();
+  userSleepAverage.innerHTML =
+  `
+  <h3>On average, you sleep ${userAverageSleepHours} hours a night! Your average sleep quality is ${userAverageSleepQuality}!</h3>
   `
 }
