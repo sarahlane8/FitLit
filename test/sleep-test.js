@@ -35,6 +35,11 @@ describe('Sleep', () => {
 
   it('should be able to take in an array of user data', () => {
 
-    expect(sleep.userData).to.deep.equal(userSleepData)
+    expect(sleep.userData).to.deep.equal(userSleepData);
+  })
+
+  it('should be able to find the avg number of hours slept per day for a user', () => {
+
+    expect(sleep.findAverageHoursSlept()).to.equal(7.8);
   })
 })
