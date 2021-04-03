@@ -25,6 +25,10 @@ class Sleep {
     const userDataByDate = this.userData.filter(day => day.date === date)
     return userDataByDate[0].hoursSlept
   }
+  findSleepQualityByDate(date) {
+    const userDataByDate = this.userData.filter(day => day.date === date)
+    return userDataByDate[0].sleepQuality
+  }
 }
 
 
