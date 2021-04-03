@@ -21,8 +21,9 @@ function manageLoadingFunctions() {
   displayUserGreeting(user1);
   displayUserInfoCard(user1);
   displayUserStepGoal(user1);
-  displayUserDailyWater("2019/06/15");
-  displayUserWeeklyWater("2019/06/28");
+  displayUserDailyWater("2019/09/22");
+  displayUserWeeklyWater("2019/09/22");
+  displayUserTodaySleep("2019/09/22");
 }
 
 function displayUserGreeting(user) {
@@ -56,7 +57,7 @@ function displayUserDailyWater(date) {
   const dailyWater = hydration.findWaterConsumptionByDate(date)
   userDailyWater.innerHTML =
     `
-    <h3>You have drank ${dailyWater} ounces of water today!</h3>
+    <h3>You drank ${dailyWater} ounces of water today!</h3>
     `
 }
 
@@ -68,5 +69,14 @@ function displayUserWeeklyWater(date) {
   userWeeklyWater.innerHTML =
   `
   <h3>${userWeeklyWaterData}</h3>
+  `
+}
+
+function displayUserTodaySleep(date) {
+  const dailySleepHours = sleep.findHoursSleptByDate(date);
+  const dailySleepQuality = sleep.findSleepQualityByDate(date);
+  userTodaySleep.innerHTML =
+  `
+  <h3>Last night you slept ${dailySleepHours} hours! </br> Your sleep quality was ${dailySleepQuality}! </h3>
   `
 }
