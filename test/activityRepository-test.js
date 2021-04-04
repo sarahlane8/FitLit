@@ -19,7 +19,7 @@ describe('ActivityRepository', () => {
     "flightsOfStairs": 26
   },
   {
-    "userID": 3,
+    "userID": 2,
     "date": "2019/06/25",
     "numSteps": 10002,
     "minutesActive": 88,
@@ -53,5 +53,15 @@ describe('ActivityRepository', () => {
   it('should return the average number of steps taken for a date by all users', () => {
 
     expect(activityRepository.findAverageProperty("2019/06/15", "numSteps")).to.equal(10321);
+  })
+
+  it('should return the average number of minutes active for a date by all users', () => {
+
+    expect(activityRepository.findAverageProperty("2019/06/15", "minutesActive")).to.equal(135);
+  })
+
+  it('should find all activityData for a specific user', () => {
+
+    expect(activityRepository.findActivityUserData(2)).to.deep.equal([activityData[1], activityData[2]])
   })
 })

@@ -10,11 +10,13 @@ findAverageProperty(date, property) {
   }, 0)
   return Math.round(averageProperty / usersByDate.length);
   }
+
+  findActivityUserData(userId) {
+    return this.userData.filter(user => user.userID === userId);
+  }
 }
 
-// findAverageSteps(date) {
-//
-// }
+
 
 if (typeof module !== 'undefined') {
   module.exports = ActivityRepository;
