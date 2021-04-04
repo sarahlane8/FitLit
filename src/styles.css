@@ -1,3 +1,13 @@
+/* #222463 */
+/* #636491 */
+/* #2E1F20; */
+/* #ACD7EC; */
+* {border:1px solid black}
+
+body {
+  background: #9E9EBD;
+}
+
 main {
   display: flex;
 }
@@ -8,13 +18,20 @@ main {
   flex-direction: column;
 }
 
+
 .water-and-sleep-section {
   display: flex;
+  /* flex-direction: column; */
 }
+
+
+
 
 .activity-section {
   display: flex;
 }
+
+
 .combined-activities {
   display: flex;
   flex-direction: row;
