@@ -29,7 +29,7 @@ describe('Activity', () => {
   ]
 
   beforeEach(() => {
-    activity = new Activity();
+    activity = new Activity(userActivityData);
   })
 
   it('should be a function', () => {
@@ -42,4 +42,8 @@ describe('Activity', () => {
     expect(activity).to.be.an.instanceof(Activity);
   })
 
+  it('should take in userData as an argument', () => {
+
+    expect(activity.userData).to.deep.equal(userActivityData);
+  })
 })
