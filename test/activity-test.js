@@ -2,6 +2,7 @@ const chai = require('chai');
 const expect = chai.expect;
 const Activity = require('../src/activity.js');
 
+
 describe('Activity', () => {
   let activity;
   const userActivityData = [
@@ -50,5 +51,10 @@ describe('Activity', () => {
   it('should filter userData based on a date', () => {
 
     expect(activity.findUserDataByDay("2019/06/17")).to.deep.equal(userActivityData[2]);
+  })
+
+  it('should return the miles a user has walked', () => {
+
+    expect(activity.calculateMilesWalked("2019/06/15", 4.3)).to.equal(4.4);
   })
 })
