@@ -1,0 +1,21 @@
+main {
+  display: flex;
+}
+
+
+.widget-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.water-and-sleep-section {
+  display: flex;
+}
+
+.activity-section {
+  display: flex;
+}
+.combined-activities {
+  display: flex;
+  flex-direction: row;
+}

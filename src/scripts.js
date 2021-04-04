@@ -78,7 +78,7 @@ function displayUserDailyWater(date) {
 function displayUserWeeklyWater(date) {
   const weekData = hydration.findDailyWaterConsumptionByWeek(date);
   let userWeeklyWaterData = '';
-  userWeeklyWaterData += weekData.map(day => ` On ${day.date} you drank ${day.numOunces} ounces of water`);
+  userWeeklyWaterData += weekData.map(day => ` On ${day.date} you drank ${day.numOunces} ounces of water </br>`);
   userWeeklyWater.innerHTML =
   `
   <h3>${userWeeklyWaterData}</h3>
