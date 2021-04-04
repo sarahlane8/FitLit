@@ -37,6 +37,7 @@ function manageLoadingFunctions() {
   displayUserMinutesActive("2019/09/22");
   displayUserDailyDistanceWalked("2019/09/22");
   displayUserActivityDailyComparison("2019/09/22");
+  displayUserWeeklyActivityStats("2019/09/22");
 }
 
 function displayUserGreeting(user) {
@@ -151,9 +152,19 @@ function displayUserActivityDailyComparison(date) {
   const allUsersDailyFlightsOfStairs = activityRepository.findAverageProperty(date, 'flightsOfStairs');
   userActivityDailyComparison.innerHTML =
   `
-<h3>Today, you walked ${userDailyNumSteps} steps, compared to ${allUsersDailyNumSteps} for all users! </br>
-Today, you were active for ${userDailylMinActive} minutes, compared to ${allUsersDailyMinActive} minutes for all users! </br>
-Today, you climbed ${userDailyFlightsOfStairs} flights of stairs, compared to ${allUsersDailyFlightsOfStairs} flights of stairs for all users!
-</h3>
+  <h3>Today, you walked ${userDailyNumSteps} steps, compared to ${allUsersDailyNumSteps} for all users! </br>
+  Today, you were active for ${userDailylMinActive} minutes, compared to ${allUsersDailyMinActive} minutes for all users! </br>
+  Today, you climbed ${userDailyFlightsOfStairs} flights of stairs, compared to ${allUsersDailyFlightsOfStairs} flights of stairs for all users!
+  </h3>
+  `
+}
+
+function displayUserWeeklyActivityStats(date) {
+  const weekData = activity.filterActivityDataByWeek(date);
+  let userWeeklyActivity = '';
+  userWeeklyActivity += weekData.map(day => ` On ${day.date} you walked ${day.numSteps} steps, you climbed ${day.flightsOfStairs} flights of stairs, and you were active for ${day.activeMinutes} minutes!`);
+  userWeeklyActivityStats.innerHTML =
+  `
+  <h3>${userWeeklyActivity}</h3>
   `
 }
