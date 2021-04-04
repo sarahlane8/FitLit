@@ -15,7 +15,7 @@ const userSleepAverage = document.getElementById('userSleepAverage');
 const userDailyNumSteps = document.getElementById('userDailyNumSteps');
 const userDailyNumMinutesActive = document.getElementById('userDailyNumMinutesActive');
 const userDailyDistanceWalked = document.getElementById('userDailyDistanceWalked');
-const userDailyComparison = document.getElementById('userDailyComparison');
+const userActivityDailyComparison = document.getElementById('userActivityDailyComparison');
 const userWeeklyActivityStats = document.getElementById('userWeeklyActivityStats');
 const activityRepository = new ActivityRepository(activityData);
 const activity = new Activity(activityRepository.findActivityUserData(1));
@@ -36,7 +36,7 @@ function manageLoadingFunctions() {
   displayUserDailySteps("2019/09/22");
   displayUserMinutesActive("2019/09/22");
   displayUserDailyDistanceWalked("2019/09/22");
-  
+  displayUserActivityDailyComparison("2019/09/22");
 }
 
 function displayUserGreeting(user) {
@@ -138,5 +138,22 @@ function displayUserDailyDistanceWalked(date) {
   userDailyDistanceWalked.innerHTML =
   `
   <h3>You walked ${userMilesWalked} miles today!</h3>
+  `
+}
+
+function displayUserActivityDailyComparison(date) {
+  const userDataByDay = activity.findUserDataByDay(date);
+  const userDailyNumSteps = userDataByDay.numSteps;
+  const userDailylMinActive = userDataByDay.minutesActive;
+  const userDailyFlightsOfStairs = userDataByDay.flightsOfStairs;
+  const allUsersDailyNumSteps = activityRepository.findAverageProperty(date, 'numSteps');
+  const allUsersDailyMinActive = activityRepository.findAverageProperty(date, 'minutesActive');
+  const allUsersDailyFlightsOfStairs = activityRepository.findAverageProperty(date, 'flightsOfStairs');
+  userActivityDailyComparison.innerHTML =
+  `
+<h3>Today, you walked ${userDailyNumSteps} steps, compared to ${allUsersDailyNumSteps} for all users! </br>
+Today, you were active for ${userDailylMinActive} minutes, compared to ${allUsersDailyMinActive} minutes for all users! </br>
+Today, you climbed ${userDailyFlightsOfStairs} flights of stairs, compared to ${allUsersDailyFlightsOfStairs} flights of stairs for all users!
+</h3>
   `
 }
