@@ -13,6 +13,11 @@ class Activity {
     const userDataByDay = this.findUserDataByDay(date);
     return Math.round((userDataByDay.numSteps * strideLength) / 5280 * 10) / 10;
   }
+
+  findMinutesActiveForDate(date) {
+    const userDataByDay = this.findUserDataByDay(date);
+    return userDataByDay.minutesActive;
+  }
 }
 
 

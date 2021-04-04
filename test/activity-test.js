@@ -57,4 +57,9 @@ describe('Activity', () => {
 
     expect(activity.calculateMilesWalked("2019/06/15", 4.3)).to.equal(4.4);
   })
+
+  it.only('should return the number of minutes a user was active on a given day', () => {
+
+    expect(activity.findMinutesActiveForDate("2019/06/15")).to.equal(200);
+  })
 })
