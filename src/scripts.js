@@ -33,6 +33,7 @@ function manageLoadingFunctions() {
   displayUserTodaySleep("2019/09/22");
   displayUserWeeklySleep("2019/09/22")
   displayUserSleepAverage()
+  displayUserDailySteps("2019/09/22");
 }
 
 function displayUserGreeting(user) {
@@ -111,4 +112,13 @@ function displayUserSleepAverage() {
   `
   <h3>On average, you sleep ${userAverageSleepHours} hours a night! Your average sleep quality is ${userAverageSleepQuality}!</h3>
   `
+}
+
+function displayUserDailySteps(date) {
+  const userDataByDay = activity.findUserDataByDay(date);
+  userDailyNumSteps.innerHTML =
+  `
+  <h3>You have walked ${userDataByDay.numSteps} steps today!</h3>
+  `
+
 }
