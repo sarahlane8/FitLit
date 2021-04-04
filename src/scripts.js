@@ -162,7 +162,7 @@ function displayUserActivityDailyComparison(date) {
 function displayUserWeeklyActivityStats(date) {
   const weekData = activity.filterActivityDataByWeek(date);
   let userWeeklyActivity = '';
-  userWeeklyActivity += weekData.map(day => ` On ${day.date} you walked ${day.numSteps} steps, you climbed ${day.flightsOfStairs} flights of stairs, and you were active for ${day.activeMinutes} minutes!`);
+  userWeeklyActivity += weekData.map(day => ` On ${day.date} you walked ${day.numSteps} steps, you climbed ${day.flightsOfStairs} flights of stairs, and you were active for ${day.minutesActive} minutes! </br>`);
   userWeeklyActivityStats.innerHTML =
   `
   <h3>${userWeeklyActivity}</h3>

@@ -11,7 +11,16 @@ body {
 main {
   display: flex;
 }
+.water-and-sleep-section {
+  display: flex;
+  justify-content: space-around;
+}
 
+.step-goals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .widget-section {
   display: flex;
@@ -19,18 +28,36 @@ main {
 }
 
 
-.water-and-sleep-section {
+
+.user-water-stats {
   display: flex;
-  /* flex-direction: column; */
+  align-self: center;
 }
 
-
-
+.user-sleep {
+  display: flex;
+  flex-direction: column;
+}
 
 .activity-section {
   display: flex;
 }
 
+.user-activity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-activity-daily-comparison {
+  display: flex;
+  align-self: center;
+}
+
+.user-weekly-activity-stats {
+  display: flex;
+  align-self: center;
+}
 
 .combined-activities {
   display: flex;
