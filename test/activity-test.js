@@ -73,8 +73,13 @@ describe('Activity', () => {
     expect(activity.findMinutesActiveAvgForWeek("2019/06/17")).to.equal(125);
   })
 
-  it.only('should return if a user reached their step goal for a given date', () => {
+  it('should return if a user reached their step goal for a given date', () => {
 
     expect(activity.checkIfStepGoalReached("2019/06/15", 10000)).to.equal(false);
+  })
+
+  it.only('should return all the days the user exceed their step goal', () => {
+
+    expect(activity.findDaysUserReachedStepGoal(4500)).to.deep.equal(["2019/06/15", "2019/06/17"])
   })
 })

@@ -46,6 +46,16 @@ class Activity {
     }
   }
 
+  findDaysUserReachedStepGoal(stepGoal) {
+    let daysStepGoalReached = [];
+    this.userData.forEach(day => {
+      if (day.numSteps >= stepGoal) {
+        daysStepGoalReached.push(day.date);
+      }
+    })
+    return daysStepGoalReached;
+  }
+
 }
 
 
