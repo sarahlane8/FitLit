@@ -37,6 +37,15 @@ class Activity {
     return Math.round(totalMinutesActive / userDataByWeek.length);
   }
 
+  checkIfStepGoalReached(date, stepGoal) {
+    const userDataByDay = this.findUserDataByDay(date);
+    if (userDataByDay.numSteps >= stepGoal) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
 
 
