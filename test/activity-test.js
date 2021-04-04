@@ -63,12 +63,12 @@ describe('Activity', () => {
     expect(activity.findMinutesActiveForDate("2019/06/15")).to.equal(200);
   })
 
-  it.only('should find a user\'s activity information based on a date', () => {
+  it('should find a user\'s activity information based on a date', () => {
 
     expect(activity.filterActivityDataByWeek("2019/06/17")).to.deep.equal(userActivityData);
   })
 
-  it('should return how many minutes on average a user was active for a given week', () => {
+  it.only('should return how many minutes on average a user was active for a given week', () => {
 
     expect(activity.findMinutesActiveAvgForWeek("2019/06/17")).to.equal(125);
   })

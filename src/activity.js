@@ -21,11 +21,21 @@ class Activity {
     const userDataByDay = this.findUserDataByDay(date);
     return userDataByDay.minutesActive;
   }
-filterActivityDataByWeek(date) {
-  const weekBeginningDate = dayjs(date).subtract(6, 'day');
-  const weekEndingDate = dayjs(date);
-  return this.userData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'))
-}
+
+  filterActivityDataByWeek(date) {
+    const weekBeginningDate = dayjs(date).subtract(6, 'day');
+    const weekEndingDate = dayjs(date);
+    return this.userData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'))
+  }
+
+  findMinutesActiveAvgForWeek(date) {
+    const userDataByWeek = this.filterActivityDataByWeek(date);
+    const totalMinutesActive = userDataByWeek.reduce((acc, day) => {
+      acc += day.minutesActive;
+      return acc;
+    }, 0)
+    return Math.round(totalMinutesActive / userDataByWeek.length);
+  }
 
 }
 
