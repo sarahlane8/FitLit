@@ -3,15 +3,18 @@ class ActivityRepository {
     this.userData = activityData;
   }
 
-findAverageStairsClimbed(date) {
+findAverageProperty(date, property) {
   const usersByDate = this.userData.filter(user => user.date === date);
-  const averageStairsClimbed = usersByDate.reduce((acc, user) => {
-    return acc += user.flightsOfStairs;
+  const averageProperty = usersByDate.reduce((acc, user) => {
+    return acc += user[property];
   }, 0)
-  return Math.round(averageStairsClimbed / usersByDate.length);
+  return Math.round(averageProperty / usersByDate.length);
   }
 }
 
+// findAverageSteps(date) {
+//
+// }
 
 if (typeof module !== 'undefined') {
   module.exports = ActivityRepository;

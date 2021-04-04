@@ -47,6 +47,11 @@ describe('ActivityRepository', () => {
 
   it('should return the average number of flights of stairs climbed for a date for all users', () => {
 
-    expect(activityRepository.findAverageStairsClimbed("2019/06/15")).to.equal(16)
+    expect(activityRepository.findAverageProperty("2019/06/15", "flightsOfStairs")).to.equal(16)
+  })
+
+  it('should return the average number of steps taken for a date by all users', () => {
+
+    expect(activityRepository.findAverageProperty("2019/06/15", "numSteps")).to.equal(10321);
   })
 })
