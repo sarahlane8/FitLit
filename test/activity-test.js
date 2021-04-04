@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const Activity = require('..src/activity.js');
+const Activity = require('../src/activity.js');
 
 describe('Activity', () => {
   let activity;
@@ -27,11 +27,19 @@ describe('Activity', () => {
       "flightsOfStairs": 13
     }
   ]
-  
+
   beforeEach(() => {
     activity = new Activity();
   })
 
+  it('should be a function', () => {
 
+    expect(Activity).to.be.a('function');
+  })
+
+  it('should instantiate a new activity', () => {
+
+    expect(activity).to.be.an.instanceof(Activity);
+  })
 
 })
