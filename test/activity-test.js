@@ -78,8 +78,13 @@ describe('Activity', () => {
     expect(activity.checkIfStepGoalReached("2019/06/15", 10000)).to.equal(false);
   })
 
-  it.only('should return all the days the user exceed their step goal', () => {
+  it('should return all the days the user exceed their step goal', () => {
 
     expect(activity.findDaysUserReachedStepGoal(4500)).to.deep.equal(["2019/06/15", "2019/06/17"])
+  })
+
+  it.only('should find a user\'s all-time stair climbing record', () => {
+
+    expect(activity.findStairClimbingRecord()).to.equal(13);
   })
 })

@@ -56,6 +56,13 @@ class Activity {
     return daysStepGoalReached;
   }
 
+  findStairClimbingRecord() {
+    const sortedStairsData = this.userData.sort((a, b) => {
+      return b.flightsOfStairs - a.flightsOfStairs
+    });
+    return sortedStairsData[0].flightsOfStairs;
+  }
+
 }
 
 
