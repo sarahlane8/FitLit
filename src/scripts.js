@@ -12,6 +12,13 @@ const sleep = new Sleep(sleepRepository.findSleepUserData(1))
 const userTodaySleep = document.getElementById('userTodaySleep');
 const userWeeklyHoursSlept = document.getElementById('userWeeklyHoursSlept');
 const userSleepAverage = document.getElementById('userSleepAverage');
+const userDailyNumSteps = document.getElementById('userDailyNumSteps');
+const userDailyNumMinutesActive = document.getElementById('userDailyNumMinutesActive');
+const userDailyDistanceWalked = document.getElementById('userDailyDistanceWalked');
+const userDailyComparison = document.getElementById('userDailyComparison');
+const userWeeklyActivityStats = document.getElementById('userWeeklyActivityStats');
+const activityRepository = new ActivityRepository(activityData);
+const activity = new Activity(activityRepository.findActivityUserData(1));
 
 //event listeners
 window.addEventListener('load', manageLoadingFunctions)
