@@ -35,7 +35,8 @@ function manageLoadingFunctions() {
   displayUserSleepAverage()
   displayUserDailySteps("2019/09/22");
   displayUserMinutesActive("2019/09/22");
-
+  displayUserDailyDistanceWalked("2019/09/22");
+  
 }
 
 function displayUserGreeting(user) {
@@ -123,10 +124,19 @@ function displayUserDailySteps(date) {
   <h3>You have walked ${userDataByDay.numSteps} steps today!</h3>
   `
 }
+
 function displayUserMinutesActive(date) {
   const userDataByDay = activity.findUserDataByDay(date);
   userDailyNumMinutesActive.innerHTML =
   `
   <h3>You were active for ${userDataByDay.minutesActive} minutes today!</h3>
+  `
+}
+
+function displayUserDailyDistanceWalked(date) {
+  const userMilesWalked = activity.calculateMilesWalked(date, user1.strideLength);
+  userDailyDistanceWalked.innerHTML =
+  `
+  <h3>You walked ${userMilesWalked} miles today!</h3>
   `
 }
