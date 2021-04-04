@@ -83,7 +83,7 @@ describe('Activity', () => {
     expect(activity.findDaysUserReachedStepGoal(4500)).to.deep.equal(["2019/06/15", "2019/06/17"])
   })
 
-  it.only('should find a user\'s all-time stair climbing record', () => {
+  it('should find a user\'s all-time stair climbing record', () => {
 
     expect(activity.findStairClimbingRecord()).to.equal(13);
   })
