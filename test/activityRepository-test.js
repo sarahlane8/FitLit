@@ -44,4 +44,9 @@ describe('ActivityRepository', () => {
 
     expect(activityRepository.userData).to.deep.equal(activityData);
   })
+
+  it('should return the average number of flights of stairs climbed for a date for all users', () => {
+
+    expect(activityRepository.findAverageStairsClimbed("2019/06/15")).to.equal(16)
+  })
 })
