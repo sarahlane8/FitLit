@@ -1,6 +1,6 @@
 class ActivityRepository {
-  constructor() {
-
+  constructor(activityData) {
+    this.userData = activityData;
   }
 }
 
