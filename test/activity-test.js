@@ -58,8 +58,18 @@ describe('Activity', () => {
     expect(activity.calculateMilesWalked("2019/06/15", 4.3)).to.equal(4.4);
   })
 
-  it.only('should return the number of minutes a user was active on a given day', () => {
+  it('should return the number of minutes a user was active on a given day', () => {
 
     expect(activity.findMinutesActiveForDate("2019/06/15")).to.equal(200);
+  })
+
+  it.only('should find a user\'s activity information based on a date', () => {
+
+    expect(activity.filterActivityDataByWeek("2019/06/17")).to.deep.equal(userActivityData);
+  })
+
+  it('should return how many minutes on average a user was active for a given week', () => {
+
+    expect(activity.findMinutesActiveAvgForWeek("2019/06/17")).to.equal(125);
   })
 })

@@ -1,3 +1,6 @@
+const dayjs = require('dayjs');
+const isBetween = require('dayjs/plugin/isBetween');
+dayjs.extend(isBetween);
 
 class Activity {
   constructor(data) {
@@ -18,9 +21,13 @@ class Activity {
     const userDataByDay = this.findUserDataByDay(date);
     return userDataByDay.minutesActive;
   }
+filterActivityDataByWeek(date) {
+  const weekBeginningDate = dayjs(date).subtract(6, 'day');
+  const weekEndingDate = dayjs(date);
+  return this.userData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'))
 }
 
-
+}
 
 
 if (typeof module !== 'undefined') {
