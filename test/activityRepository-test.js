@@ -14,4 +14,9 @@ describe('ActivityRepository', () => {
   it('should be a function', () => {
     expect(ActivityRepository).to.be.a('function');
   })
+
+  it('should instantiate a new activityRepository', () => {
+
+    expect(activityRepository).to.be.an.instanceof(ActivityRepository);
+  })
 })
