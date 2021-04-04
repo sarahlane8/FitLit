@@ -12,6 +12,13 @@ const sleep = new Sleep(sleepRepository.findSleepUserData(1))
 const userTodaySleep = document.getElementById('userTodaySleep');
 const userWeeklyHoursSlept = document.getElementById('userWeeklyHoursSlept');
 const userSleepAverage = document.getElementById('userSleepAverage');
+const userDailyNumSteps = document.getElementById('userDailyNumSteps');
+const userDailyNumMinutesActive = document.getElementById('userDailyNumMinutesActive');
+const userDailyDistanceWalked = document.getElementById('userDailyDistanceWalked');
+const userActivityDailyComparison = document.getElementById('userActivityDailyComparison');
+const userWeeklyActivityStats = document.getElementById('userWeeklyActivityStats');
+const activityRepository = new ActivityRepository(activityData);
+const activity = new Activity(activityRepository.findActivityUserData(1));
 
 //event listeners
 window.addEventListener('load', manageLoadingFunctions)
@@ -26,6 +33,11 @@ function manageLoadingFunctions() {
   displayUserTodaySleep("2019/09/22");
   displayUserWeeklySleep("2019/09/22")
   displayUserSleepAverage()
+  displayUserDailySteps("2019/09/22");
+  displayUserMinutesActive("2019/09/22");
+  displayUserDailyDistanceWalked("2019/09/22");
+  displayUserActivityDailyComparison("2019/09/22");
+  displayUserWeeklyActivityStats("2019/09/22");
 }
 
 function displayUserGreeting(user) {
@@ -103,5 +115,56 @@ function displayUserSleepAverage() {
   userSleepAverage.innerHTML =
   `
   <h3>On average, you sleep ${userAverageSleepHours} hours a night! Your average sleep quality is ${userAverageSleepQuality}!</h3>
+  `
+}
+
+function displayUserDailySteps(date) {
+  const userDataByDay = activity.findUserDataByDay(date);
+  userDailyNumSteps.innerHTML =
+  `
+  <h3>You have walked ${userDataByDay.numSteps} steps today!</h3>
+  `
+}
+
+function displayUserMinutesActive(date) {
+  const userDataByDay = activity.findUserDataByDay(date);
+  userDailyNumMinutesActive.innerHTML =
+  `
+  <h3>You were active for ${userDataByDay.minutesActive} minutes today!</h3>
+  `
+}
+
+function displayUserDailyDistanceWalked(date) {
+  const userMilesWalked = activity.calculateMilesWalked(date, user1.strideLength);
+  userDailyDistanceWalked.innerHTML =
+  `
+  <h3>You walked ${userMilesWalked} miles today!</h3>
+  `
+}
+
+function displayUserActivityDailyComparison(date) {
+  const userDataByDay = activity.findUserDataByDay(date);
+  const userDailyNumSteps = userDataByDay.numSteps;
+  const userDailylMinActive = userDataByDay.minutesActive;
+  const userDailyFlightsOfStairs = userDataByDay.flightsOfStairs;
+  const allUsersDailyNumSteps = activityRepository.findAverageProperty(date, 'numSteps');
+  const allUsersDailyMinActive = activityRepository.findAverageProperty(date, 'minutesActive');
+  const allUsersDailyFlightsOfStairs = activityRepository.findAverageProperty(date, 'flightsOfStairs');
+  userActivityDailyComparison.innerHTML =
+  `
+  <h3>Today, you walked ${userDailyNumSteps} steps, compared to ${allUsersDailyNumSteps} for all users! </br>
+  Today, you were active for ${userDailylMinActive} minutes, compared to ${allUsersDailyMinActive} minutes for all users! </br>
+  Today, you climbed ${userDailyFlightsOfStairs} flights of stairs, compared to ${allUsersDailyFlightsOfStairs} flights of stairs for all users!
+  </h3>
+  `
+}
+
+function displayUserWeeklyActivityStats(date) {
+  const weekData = activity.filterActivityDataByWeek(date);
+  let userWeeklyActivity = '';
+  userWeeklyActivity += weekData.map(day => ` On ${day.date} you walked ${day.numSteps} steps, you climbed ${day.flightsOfStairs} flights of stairs, and you were active for ${day.activeMinutes} minutes!`);
+  userWeeklyActivityStats.innerHTML =
+  `
+  <h3>${userWeeklyActivity}</h3>
   `
 }
