@@ -46,4 +46,9 @@ describe('Activity', () => {
 
     expect(activity.userData).to.deep.equal(userActivityData);
   })
+
+  it('should filter userData based on a date', () => {
+
+    expect(activity.findUserDataByDay("2019/06/17")).to.deep.equal(userActivityData[2]);
+  })
 })
