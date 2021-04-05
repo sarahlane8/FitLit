@@ -24,6 +24,7 @@ const sleepChart = document.getElementById('sleepChart');
 
 
 
+
 //event listeners
 window.addEventListener('load', manageLoadingFunctions)
 
@@ -212,12 +213,38 @@ function displayUserActivityDailyComparison(date) {
   `
 }
 
+// function displayUserWeeklyActivityStats(date) {
+//   const weekData = activity.filterActivityDataByWeek(date);
+//   let userWeeklyActivity = '';
+//   userWeeklyActivity += weekData.map(day => ` On ${day.date} you walked ${day.numSteps} steps, you climbed ${day.flightsOfStairs} flights of stairs, and you were active for ${day.minutesActive} minutes! </br>`);
+//   userWeeklyActivityStats.innerHTML =
+//   `
+//   <h3>${userWeeklyActivity}</h3>
+//   `
+// }
+
 function displayUserWeeklyActivityStats(date) {
   const weekData = activity.filterActivityDataByWeek(date);
-  let userWeeklyActivity = '';
-  userWeeklyActivity += weekData.map(day => ` On ${day.date} you walked ${day.numSteps} steps, you climbed ${day.flightsOfStairs} flights of stairs, and you were active for ${day.minutesActive} minutes! </br>`);
+  let userWeeklyActivity;
+  userWeeklyActivity += weekData.map(day =>
+    `
+      <tr>
+       <td>${day.date}</td>
+       <td>${day.numSteps}</td>
+       <td>${day.flightsOfStairs}</td>
+       <td>${day.minutesActive}</td>
+      </tr>
+    `
+  )
   userWeeklyActivityStats.innerHTML =
-  `
-  <h3>${userWeeklyActivity}</h3>
-  `
+    `<table cellspacing=0>
+      <tr>
+        <th>Date</th>
+        <th>Steps</th>
+        <th>Flights Climbed</th>
+        <th>Minutes Active</th>
+      </tr>
+    ${userWeeklyActivity}
+    </table>
+    `
 }
