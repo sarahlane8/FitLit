@@ -14,7 +14,7 @@ class Sleep {
       return Math.round((totalProperty / this.userData.length) * 10) / 10;
   }
 
-  findPropertyByDate(date, property) {
+  findSleepPropertyByDate(date, property) {
     const userDataByDate = this.userData.filter(day => day.date === date)
     return userDataByDate[0][property];
   }
@@ -25,7 +25,7 @@ class Sleep {
     return this.userData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'));
   }
 
-  findDailyPropertyByWeek(date, property) {
+  findDailySleepPropertyByWeek(date, property) {
     const weekOfSleepDataObjects = this.filterSleepDataByWeek(date)
     const result = weekOfSleepDataObjects.reduce((acc, user) => {
       acc[user.date] = user[property];
@@ -33,9 +33,7 @@ class Sleep {
     }, {})
     return result;
   }
-
 }
-
 
 
 
