@@ -14,14 +14,9 @@ class Sleep {
       return Math.round((totalProperty / this.userData.length) * 10) / 10;
   }
 
-  findHoursSleptByDate(date) {
+  findPropertyByDate(date, property) {
     const userDataByDate = this.userData.filter(day => day.date === date)
-    return userDataByDate[0].hoursSlept;
-  }
-
-  findSleepQualityByDate(date) {
-    const userDataByDate = this.userData.filter(day => day.date === date)
-    return userDataByDate[0].sleepQuality;
+    return userDataByDate[0][property];
   }
 
   filterSleepDataByWeek(date) {
