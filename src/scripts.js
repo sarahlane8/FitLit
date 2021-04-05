@@ -92,7 +92,7 @@ function displayUserWeeklyWater(date) {
   const waterData = {
     labels: chartLabels,
     datasets: [{
-      label: 'Onces',
+      label: 'Ounces',
       data: chartData,
       backgroundColor: [
         { fillColor: 'rgba(255, 99, 132, 0.2)' }
@@ -135,10 +135,10 @@ function displayUserWeeklySleep(date) {
     userWeeklySleepData += ` On ${day} you slept ${weeklyHoursSlept[day]} hours and your sleep quality was ${weeklySleepQuality[day]} </br>`
     return userWeeklySleepData;
   })
-  userWeeklyHoursSlept.innerHTML =
-  `
-  <h3>${userWeeklySleepData}</h3>
-  `
+  // userWeeklyHoursSlept.innerHTML =
+  // `
+  // <h3>${userWeeklySleepData}</h3>
+  // `
   const sleepData = {
     labels: keys,
     datasets: [{

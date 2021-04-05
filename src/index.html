@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Activity Tracker</title>
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -12,48 +13,34 @@
       <aside id="userInfoCard">
       </aside>
       <div class="widget-section">
-        <div class="water-and-sleep-section">
-          <section class="step-goals">
-            <article id="userStepGoals">
-            </article>
-            <article id="userDailyWater">
-            </article>
-          </section>
-          <section class="user-water-stats">
-            <article id="userWeeklyWater">
-            </article>
-            <div>
-              <canvas id="waterChart" height="200" width="200"></canvas>
-            </div>
-          </section>
-          <section class="user-sleep">
-            <article id="userTodaySleep">
-            </article>
-            <article id="userSleepAverage">
-            </article>
-            <article id="userWeeklyHoursSlept">
-            </article>
-            <div>
-              <canvas id="sleepChart" height="250" width="250"></canvas>
-            </div>
-          </section>
+        <article id="userStepGoals">
+        </article>
+        <article id="userDailyWater">
+        </article>
+        <!-- <article id="userWeeklyWater">
+        </article> -->
+        <div>
+          <canvas id="waterChart" height="200" width="200"></canvas>
         </div>
-        <div class="activity-section">
-          <section class="user-activity">
-            <article id="userDailyNumSteps">
-            </article>
-            <article id="userDailyNumMinutesActive">
-            </article>
-            <article id="userDailyDistanceWalked">
-            </article>
-          </section>
-          <section class="combined-activities">
-            <article id="userActivityDailyComparison" class="user-activity-daily-comparison">
-            </article>
-            <article id="userWeeklyActivityStats" class="user-weekly-activity-stats">
-            </article>
-          </section>
+        <article id="userTodaySleep">
+        </article>
+        <article id="userSleepAverage">
+        </article>
+        <!-- <article id="userWeeklyHoursSlept">
+        </article> -->
+        <div>
+          <canvas id="sleepChart" height="250" width="250"></canvas>
         </div>
+        <article id="userDailyNumSteps">
+        </article>
+        <article id="userDailyNumMinutesActive">
+        </article>
+        <article id="userDailyDistanceWalked">
+        </article>
+        <article id="userActivityDailyComparison" class="user-activity-daily-comparison">
+        </article>
+        <article id="userWeeklyActivityStats" class="user-weekly-activity-stats">
+        </article>
       </div>
     </main>
 
