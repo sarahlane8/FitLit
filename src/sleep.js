@@ -1,6 +1,6 @@
-// const dayjs = require('dayjs');
-// const isBetween = require('dayjs/plugin/isBetween');
-// dayjs.extend(isBetween);
+const dayjs = require('dayjs');
+const isBetween = require('dayjs/plugin/isBetween');
+dayjs.extend(isBetween);
 
 class Sleep {
   constructor(userSleepData) {
@@ -25,23 +25,15 @@ class Sleep {
     return this.userData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'));
   }
 
-  findDailyHoursSleptByWeek(date) {
+  findDailyPropertyByWeek(date, property) {
     const weekOfSleepDataObjects = this.filterSleepDataByWeek(date)
     const result = weekOfSleepDataObjects.reduce((acc, user) => {
-      acc[user.date] = user.hoursSlept;
+      acc[user.date] = user[property];
       return acc;
     }, {})
     return result;
   }
 
-  findDailySleepQualityByWeek(date) {
-    const weekOfSleepDataObjects = this.filterSleepDataByWeek(date)
-    const result = weekOfSleepDataObjects.reduce((acc, user) => {
-      acc[user.date] = user.sleepQuality;
-      return acc;
-    }, {})
-    return result;
-  }
 }
 
 
