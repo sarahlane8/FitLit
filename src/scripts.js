@@ -19,6 +19,9 @@ const userActivityDailyComparison = document.getElementById('userActivityDailyCo
 const userWeeklyActivityStats = document.getElementById('userWeeklyActivityStats');
 const activityRepository = new ActivityRepository(activityData);
 const activity = new Activity(activityRepository.findActivityUserData(1));
+const waterChart = document.getElementById('waterChart');
+
+
 
 //event listeners
 window.addEventListener('load', manageLoadingFunctions)
@@ -76,13 +79,45 @@ function displayUserDailyWater(date) {
 }
 
 function displayUserWeeklyWater(date) {
-  const weekData = hydration.findDailyWaterConsumptionByWeek(date);
+  const weekData = hydration.findDailyWaterConsumptionByWeek(date);//an array with 7 objects
   let userWeeklyWaterData = '';
   userWeeklyWaterData += weekData.map(day => ` On ${day.date} you drank ${day.numOunces} ounces of water </br>`);
-  userWeeklyWater.innerHTML =
-  `
-  <h3>${userWeeklyWaterData}</h3>
-  `
+  // userWeeklyWater.innerHTML =
+  // `
+  // <h3>${userWeeklyWaterData}</h3>
+  // `
+  const chartLabels = weekData.map(day => day.date);
+  const chartData = weekData.map(day => day.numOunces);
+  const waterData = {
+    labels: chartLabels,
+    datasets: [{
+      label: 'Weekly Water',
+      data: chartData,
+      backgroundColor: [
+        { fillColor: 'rgba(255, 99, 132, 0.2)' }
+        // 'rgba(255, 159, 64, 0.2)',
+        // 'rgba(255, 205, 86, 0.2)',
+        // 'rgba(75, 192, 192, 0.2)',
+        // 'rgba(54, 162, 235, 0.2)',
+        // 'rgba(153, 102, 255, 0.2)',
+        // 'rgba(201, 203, 207, 0.2)'
+      ],
+      borderColor: [
+        'rgb(255, 99, 132)',
+        'rgb(255, 159, 64)',
+        'rgb(255, 205, 86)',
+        'rgb(75, 192, 192)',
+        'rgb(54, 162, 235)',
+        'rgb(153, 102, 255)',
+        'rgb(201, 203, 207)'
+      ],
+      borderWidth: 1
+    }]
+  };
+  let myBarChart = new Chart(waterChart, {
+    type: 'bar',
+    data: waterData,
+  });
 }
 
 function displayUserTodaySleep(date) {
