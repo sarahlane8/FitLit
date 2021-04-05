@@ -92,7 +92,7 @@ function displayUserWeeklyWater(date) {
   const waterData = {
     labels: chartLabels,
     datasets: [{
-      label: 'Weekly Water',
+      label: 'Onces',
       data: chartData,
       backgroundColor: [
         { fillColor: 'rgba(255, 99, 132, 0.2)' }
@@ -129,6 +129,8 @@ function displayUserWeeklySleep(date) {
   const weeklySleepQuality = sleep.findDailySleepQualityByWeek(date);
   let userWeeklySleepData = '';
   const keys = Object.keys(weeklyHoursSlept);
+  const hours = keys.map(day => weeklyHoursSlept[day]);
+  const quality = keys.map(day => weeklySleepQuality[day]);
   keys.map(day => {
     userWeeklySleepData += ` On ${day} you slept ${weeklyHoursSlept[day]} hours and your sleep quality was ${weeklySleepQuality[day]} </br>`
     return userWeeklySleepData;
@@ -137,20 +139,27 @@ function displayUserWeeklySleep(date) {
   `
   <h3>${userWeeklySleepData}</h3>
   `
-  const data = {
-    labels: labels,
+  const sleepData = {
+    labels: keys,
     datasets: [{
-      label: 'My First Dataset',
-      data: [65, 59, 80, 81, 56, 55, 40],
+      label: 'Hours Slept',
+      data: hours,
       fill: false,
       borderColor: 'rgb(75, 192, 192)',
       tension: 0.1
+    }, {
+      label: 'Sleep Quality',
+      data: quality,
+      fill: false,
+      borderColor: 'rgb(75, 72, 192)',
+      tension: 0.1
     }]
   };
-  var myLineChart = new Chart(ctx, {
-      type: 'line',
-      data: data
 
+  var myLineChart = new Chart(sleepChart, {
+      type: 'line',
+      data: sleepData
+  })
 }
 
 function displayUserSleepAverage() {
