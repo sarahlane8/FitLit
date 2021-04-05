@@ -57,14 +57,14 @@ describe('Sleep', () => {
     expect(sleep.userData).to.deep.equal(userSleepData);
   })
 
-  it('should be able to find the avg number of hours slept per day for a user', () => {
+  it.only('should be able to find the avg number of hours slept per day for a user', () => {
 
-    expect(sleep.findAverageHoursSlept()).to.equal(8);
+    expect(sleep.findAverageProperty('hoursSlept')).to.equal(8);
   })
 
-  it('should be able to find the avg sleep quality per day for a user', () => {
+  it.only('should be able to find the avg sleep quality per day for a user', () => {
 
-    expect(sleep.findAverageSleepQuality()).to.equal(2.8);
+    expect(sleep.findAverageProperty('sleepQuality')).to.equal(2.8);
   })
 
   it('should be able to return hours slept for a particular date', () => {

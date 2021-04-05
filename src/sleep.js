@@ -7,18 +7,11 @@ class Sleep {
     this.userData = userSleepData;
   }
 
-  findAverageHoursSlept() {
-    const totalHoursSlept = this.userData.reduce((acc, day) => {
-      return acc + day.hoursSlept;
+  findAverageProperty(property) {
+    const totalProperty = this.userData.reduce((acc, day) => {
+      return acc + day[property];
     }, 0)
-    return Math.round((totalHoursSlept / this.userData.length) * 10) / 10;
-  }
-
-  findAverageSleepQuality() {
-    const totalQualityOfSleep = this.userData.reduce((acc, day) => {
-      return acc + day.sleepQuality;
-    }, 0)
-    return Math.round((totalQualityOfSleep / this.userData.length) * 10) / 10;
+      return Math.round((totalProperty / this.userData.length) * 10) / 10;
   }
 
   findHoursSleptByDate(date) {
