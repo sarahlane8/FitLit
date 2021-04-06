@@ -115,7 +115,8 @@ function displayUserTodaySleep(date) {
   const dailySleepQuality = sleep.findSleepQualityByDate(date);
   userTodaySleep.innerHTML =
   `
-  <h3>Today's sleep: ${dailySleepHours} hours </br> Today's sleep quality: ${dailySleepQuality} </h3>
+  <h3>Today's sleep: ${dailySleepHours} hours</h3>
+  <h3>Today's sleep quality: ${dailySleepQuality}</h3>
   `
 }
 
@@ -158,7 +159,8 @@ function displayUserSleepAverage() {
   const userAverageSleepQuality = sleep.findAverageSleepQuality();
   userSleepAverage.innerHTML =
   `
-  <h3>Average sleep: ${userAverageSleepHours} hours</br> Average sleep quality: ${userAverageSleepQuality}</h3>
+  <h3>Average sleep: ${userAverageSleepHours} hours</h3>
+  <h3>Average sleep quality: ${userAverageSleepQuality}</h3>
   `
 }
 

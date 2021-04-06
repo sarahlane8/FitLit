@@ -17,6 +17,11 @@ main {
 article {
   border-radius: 1rem;
   min-height: 15rem;
+  background: #D89A9E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -32,30 +37,29 @@ div {
   text-align: center;
 }
 
+.step-goal-widget {
+  border: 1px solid black;
+}
+
 .water-widget {
   border: 1px solid black;
-  background: #B5BDB3;
+  /* background: #B5BDB3; */
 }
 
 .sleep-widget {
-  background: #D89A9E;
+  /* background: #D89A9E; */
   border: 1px solid black;
 }
 
 .activity-widget {
-  background: #846267;
+  /* background: #846267; */
   border: 1px solid black;
 }
 
 .chart-container {
   position: relative;
   width: 33vw;
-  /* min-height: 15rem; */
-}
-
-.user-activity-daily-comparison {
-  display: flex;
-  align-self: center;
+  background: #D89A9E
 }
 
 .user-weekly-activity-stats {
@@ -64,7 +68,6 @@ div {
 }
 
 @media only screen and ( min-width: 951px) {
-  /* .widget-section { flex-wrap: wrap; } */
   .widget-section > article {flex-basis: 30%;}
   .widget-section > .chart-container { width: 30%;}
 }
