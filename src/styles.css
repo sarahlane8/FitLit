@@ -6,6 +6,7 @@
 
 body {
   background: #9E9EBD;
+  font-family: "Rubik"
 }
 
 main {
@@ -23,6 +24,7 @@ div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  text-align: center;
 }
 
 .water-widget {
