@@ -22,6 +22,7 @@ article {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0.6rem 0 0.6rem 0;
 }
 
 
@@ -59,7 +60,8 @@ div {
 .chart-container {
   position: relative;
   width: 33vw;
-  background: #D89A9E
+  background: #D89A9E;
+  margin: 0.6rem 0 0.6rem 0;
 }
 
 .user-weekly-activity-stats {

@@ -92,10 +92,10 @@ function displayUserWeeklyWater(date) {
       label: 'Ounces',
       data: chartData,
       backgroundColor: [
-        { fillColor: 'rgba(255, 99, 132, 0.2)' }
+        { fillColor: '#846267' }
       ],
       borderColor: [
-        'rgb(153, 102, 255)',
+        '#846267',
       ],
       borderWidth: 1
     }]
@@ -133,13 +133,13 @@ function displayUserWeeklySleep(date) {
       label: 'Hours Slept',
       data: hours,
       fill: false,
-      borderColor: 'rgb(75, 192, 192)',
+      borderColor: '#7E3A4E',
       tension: 0.1
     }, {
       label: 'Sleep Quality',
       data: quality,
       fill: false,
-      borderColor: 'rgb(75, 72, 192)',
+      borderColor: '#846267',
       tension: 0.1
     }]
   };
