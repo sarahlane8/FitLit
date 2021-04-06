@@ -103,6 +103,10 @@ function displayUserWeeklyWater(date) {
   let myBarChart = new Chart(waterChart, {
     type: 'bar',
     data: waterData,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    }
   });
 }
 
@@ -141,7 +145,11 @@ function displayUserWeeklySleep(date) {
 
   var myLineChart = new Chart(sleepChart, {
       type: 'line',
-      data: sleepData
+      data: sleepData,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      }
   })
 }
 

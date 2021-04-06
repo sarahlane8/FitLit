@@ -2,11 +2,11 @@
 /* #636491 */
 /* #2E1F20; */
 /* #ACD7EC; */
-* {border:1px solid black}
+/* * {border:1px solid black} */
 
 body {
-  background: #9E9EBD;
-  font-family: "Rubik"
+  background: #EDDCD4;
+  font-family: "Rubik";
 }
 
 main {
@@ -14,10 +14,15 @@ main {
   flex-direction: row;
 }
 
-article,
+article {
+  border-radius: 1rem;
+  min-height: 15rem;
+}
+
+
 div {
-  min-width: 15rem;
-  border-radius: 1rem
+  border-radius: 1rem;
+  min-height: 15rem
 }
 
 .widget-section {
@@ -28,12 +33,24 @@ div {
 }
 
 .water-widget {
-  border: 1px solid blue
+  border: 1px solid black;
+  background: #B5BDB3;
+}
+
+.sleep-widget {
+  background: #D89A9E;
+  border: 1px solid black;
+}
+
+.activity-widget {
+  background: #846267;
+  border: 1px solid black;
 }
 
 .chart-container {
   position: relative;
   width: 33vw;
+  /* min-height: 15rem; */
 }
 
 .user-activity-daily-comparison {
@@ -48,15 +65,15 @@ div {
 
 @media only screen and ( min-width: 951px) {
   /* .widget-section { flex-wrap: wrap; } */
-  .widget-section > article {flex-basis: 33%; }
-  .widget-section > .chart-container { width: 33vw }
+  .widget-section > article {flex-basis: 30%;}
+  .widget-section > .chart-container { width: 30%;}
 }
 
 @media only screen and ( max-width: 950px) {
-  .widget-section > article, .chart-container {flex-basis: 50%; }
+  .widget-section > article, .chart-container {flex-basis: 45%; }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
   .widget-section > article, .chart-container {flex-basis: 100%; }
 }
 
