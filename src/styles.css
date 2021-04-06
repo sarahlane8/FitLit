@@ -10,6 +10,7 @@ body {
 
 main {
   display: flex;
+  flex-direction: row;
 }
 
 article,
@@ -28,8 +29,9 @@ div {
   border: 1px solid blue
 }
 
-.sleep-widget {
-
+.chart-container {
+  position: relative;
+  width: 33vw;
 }
 
 .user-activity-daily-comparison {
@@ -42,7 +44,21 @@ div {
   align-self: center;
 }
 
-@media ( max-width: 700px) {
-  .widget-section { flex-wrap: wrap; }
+@media only screen and ( min-width: 951px) {
+  /* .widget-section { flex-wrap: wrap; } */
   .widget-section > article {flex-basis: 33%; }
+  .widget-section > .chart-container { width: 33vw }
+}
+
+@media only screen and ( max-width: 950px) {
+  .widget-section > article, .chart-container {flex-basis: 50%; }
+}
+
+@media only screen and (max-width: 700px) {
+  .widget-section > article, .chart-container {flex-basis: 100%; }
+}
+
+@media only screen and (max-width: 580px) {
+  main { flex-direction: column; }
+  header { text-align: center;}
 }
