@@ -225,8 +225,7 @@ function displayUserActivityDailyComparison(date) {
 
 function displayUserWeeklyActivityStats(date) {
   const weekData = activity.filterActivityDataByWeek(date);
-  let userWeeklyActivity;
-  userWeeklyActivity += weekData.map(day =>
+  let userWeeklyActivity = weekData.map(day =>
     `
       <tr>
        <td>${day.date}</td>
@@ -236,7 +235,7 @@ function displayUserWeeklyActivityStats(date) {
       </tr>
     `
   )
-  userWeeklyActivityStats.innerHTML =
+  const chartData =
     `<table cellspacing=0>
       <tr>
         <th>Date</th>
@@ -244,7 +243,8 @@ function displayUserWeeklyActivityStats(date) {
         <th>Flights Climbed</th>
         <th>Minutes Active</th>
       </tr>
-    ${userWeeklyActivity}
+      ${userWeeklyActivity}
     </table>
     `
+    userWeeklyActivityStats.innerHTML = chartData.split(',').join('');
 }
