@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const SleepRepository = require('../src/sleepRepository');
+const SleepRepository = require('../src/SleepRepository');
 
 describe('SleepRepository', () => {
   let sleepData

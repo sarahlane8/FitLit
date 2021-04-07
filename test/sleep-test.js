@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const Sleep = require('../src/sleep');
-const SleepRepository = require('../src/sleepRepository');
+const SleepRepository = require('../src/SleepRepository');
 
 describe('Sleep', () => {
   const userSleepData = [

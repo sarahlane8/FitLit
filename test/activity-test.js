@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const Activity = require('../src/activity.js');
+const Activity = require('../src/Activity.js');
 
 
 describe('Activity', () => {
