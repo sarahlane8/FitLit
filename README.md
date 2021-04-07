@@ -44,14 +44,13 @@ When creating the dashboard, consideration was given to ensure the dashboard wou
   * WAVE Evaluation Tool
   * Lighthouse
 
+## Technologies Used
+  * Chart.js
+  * ESLint
+  * CSS
+  * HTML
+  * JavaScript
 
-Technologies Used
-chartJS
-dayjs
-eslint
-css
-html
-js
 
 future considerations
 refactor code to be DRY and SRP
@@ -60,7 +59,6 @@ change the user
 let the user choose a date to pull data from
 
 
-licensing?
 
 contributors
 Github page (https://github.com/sarahlane8/FitLit)  
