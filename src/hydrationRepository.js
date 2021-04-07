@@ -4,12 +4,10 @@ class HydrationRepository {
   }
 
   findHydrationUserData(userId) {
-    let userHydrationData = this.hydrationData.filter(user => user.userID === userId)
+    let userHydrationData = this.hydrationData.filter(user => user.userID === userId);
     return userHydrationData;
   }
-  
 }
-
 
 
 if (typeof module !== 'undefined') {

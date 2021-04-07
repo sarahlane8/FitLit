@@ -3,14 +3,21 @@ body {
   font-family: "Rubik";
 }
 
+
 main {
   display: flex;
   flex-direction: row;
 }
 
+
+div,
 article {
   border-radius: 1rem;
-  min-height: 15rem;
+  min-height: 15rem
+}
+
+
+article {
   background: #D89A9E;
   display: flex;
   flex-direction: column;
@@ -19,10 +26,6 @@ article {
   margin: 0.6rem 0 0.6rem 0;
 }
 
-div {
-  border-radius: 1rem;
-  min-height: 15rem
-}
 
 .widget-section {
   display: flex;
@@ -31,21 +34,26 @@ div {
   text-align: center;
 }
 
+
 .step-goal-widget {
   border: 7px solid #8D686E;
 }
+
 
 .water-widget {
   border: 7px solid #BF635F;
 }
 
+
 .sleep-widget {
   border: 7px solid #8A9787;
 }
 
+
 .activity-widget {
   border: 7px solid #7E3A4E;
 }
+
 
 .chart-container {
   position: relative;
@@ -54,25 +62,42 @@ div {
   margin: 0.6rem 0 0.6rem 0;
 }
 
+
 .user-weekly-activity-stats {
   display: flex;
   align-self: center;
 }
 
+
 @media only screen and ( min-width: 951px) {
-  .widget-section > article {flex-basis: 30%;}
-  .widget-section > .chart-container { width: 30%;}
+  .widget-section > article {
+    flex-basis: 30%;
+  }
+  .widget-section > .chart-container {
+    width: 30%;
+  }
 }
+
 
 @media only screen and ( max-width: 950px) {
-  .widget-section > article, .chart-container {flex-basis: 45%; }
+  .widget-section > article, .chart-container {
+    flex-basis: 45%;
+  }
 }
+
 
 @media only screen and (max-width: 750px) {
-  .widget-section > article, .chart-container {flex-basis: 100%; }
+  .widget-section > article, .chart-container {
+    flex-basis: 100%;
+  }
 }
 
+
 @media only screen and (max-width: 580px) {
-  main { flex-direction: column; }
-  header { text-align: center;}
+  main {
+    flex-direction: column;
+  }
+  header {
+    text-align: center;
+  }
 }

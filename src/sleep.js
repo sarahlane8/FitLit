@@ -22,12 +22,12 @@ class Sleep {
   }
 
   findHoursSleptByDate(date) {
-    const userDataByDate = this.userData.filter(day => day.date === date)
+    const userDataByDate = this.userData.filter(day => day.date === date);
     return userDataByDate[0].hoursSlept;
   }
 
   findSleepQualityByDate(date) {
-    const userDataByDate = this.userData.filter(day => day.date === date)
+    const userDataByDate = this.userData.filter(day => day.date === date);
     return userDataByDate[0].sleepQuality;
   }
 
@@ -38,7 +38,7 @@ class Sleep {
   }
 
   findDailyHoursSleptByWeek(date) {
-    const weekOfSleepDataObjects = this.filterSleepDataByWeek(date)
+    const weekOfSleepDataObjects = this.filterSleepDataByWeek(date);
     const result = weekOfSleepDataObjects.reduce((acc, user) => {
       acc[user.date] = user.hoursSlept;
       return acc;
@@ -47,7 +47,7 @@ class Sleep {
   }
 
   findDailySleepQualityByWeek(date) {
-    const weekOfSleepDataObjects = this.filterSleepDataByWeek(date)
+    const weekOfSleepDataObjects = this.filterSleepDataByWeek(date);
     const result = weekOfSleepDataObjects.reduce((acc, user) => {
       acc[user.date] = user.sleepQuality;
       return acc;
@@ -55,8 +55,6 @@ class Sleep {
     return result;
   }
 }
-
-
 
 
 if (typeof module !== 'undefined') {

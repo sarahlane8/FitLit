@@ -11,7 +11,7 @@ class Hydration {
     let userTotalHydrationAvg = this.userHydrationData.reduce((acc, userEntry) => {
       return acc + userEntry.numOunces;
     }, 0);
-    return Math.round(userTotalHydrationAvg / this.userHydrationData.length)
+    return Math.round(userTotalHydrationAvg / this.userHydrationData.length);
   }
 
   findWaterConsumptionByDate(date) {
@@ -22,11 +22,9 @@ class Hydration {
   findDailyWaterConsumptionByWeek(date) {
     const weekBeginningDate = dayjs(date).subtract(6, 'day');
     const weekEndingDate = dayjs(date);
-    return this.userHydrationData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'))
+    return this.userHydrationData.filter(({date}) => dayjs(date).isBetween(weekBeginningDate, weekEndingDate, null, '[]'));
   }
-
 }
-
 
 
 if (typeof module !== 'undefined') {

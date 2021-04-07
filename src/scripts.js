@@ -1,34 +1,35 @@
-const header = document.getElementById('header');
-const userInfoCard = document.getElementById('userInfoCard');
-const userStepGoals = document.getElementById('userStepGoals');
+//Class Instances
 const userRepository = new UserRepository(userData);
 const user1 = new User(userRepository.users[0]);
 const hydrationRepository = new HydrationRepository(hydrationData);
 const hydration = new Hydration(hydrationRepository.findHydrationUserData(1));
-const userDailyWater = document.getElementById('userDailyWater');
-const userWeeklyWater = document.getElementById('userWeeklyWater');
 const sleepRepository = new SleepRepository(sleepData)
 const sleep = new Sleep(sleepRepository.findSleepUserData(1))
+const activityRepository = new ActivityRepository(activityData);
+const activity = new Activity(activityRepository.findActivityUserData(1));
+
+
+//Query Selectors
+const header = document.getElementById('header');
+const userInfoCard = document.getElementById('userInfoCard');
+const userStepGoals = document.getElementById('userStepGoals');
+const userDailyWater = document.getElementById('userDailyWater');
 const userTodaySleep = document.getElementById('userTodaySleep');
-const userWeeklyHoursSlept = document.getElementById('userWeeklyHoursSlept');
 const userSleepAverage = document.getElementById('userSleepAverage');
 const userDailyNumSteps = document.getElementById('userDailyNumSteps');
 const userDailyNumMinutesActive = document.getElementById('userDailyNumMinutesActive');
 const userDailyDistanceWalked = document.getElementById('userDailyDistanceWalked');
 const userActivityDailyComparison = document.getElementById('userActivityDailyComparison');
 const userWeeklyActivityStats = document.getElementById('userWeeklyActivityStats');
-const activityRepository = new ActivityRepository(activityData);
-const activity = new Activity(activityRepository.findActivityUserData(1));
 const waterChart = document.getElementById('waterChart');
 const sleepChart = document.getElementById('sleepChart');
 
 
-
-
-//event listeners
+//Event Listeners
 window.addEventListener('load', manageLoadingFunctions)
 
 
+//Functions
 function manageLoadingFunctions() {
   displayUserGreeting(user1);
   displayUserInfoCard(user1);
@@ -55,6 +56,7 @@ function displayUserInfoCard(user) {
   let userFriendNames = userFriendList.map(friend => friend.name)
   userInfoCard.innerHTML =
     `
+    <h2>User Information</h2>
     <h3>${user.name}</h3>
     <p>Address: ${user.address}</p>
     <p>Daily Step Goal: ${user.dailyStepGoal}</p>
@@ -81,9 +83,7 @@ function displayUserDailyWater(date) {
 }
 
 function displayUserWeeklyWater(date) {
-  const weekData = hydration.findDailyWaterConsumptionByWeek(date);//an array with 7 objects
-  let userWeeklyWaterData = '';
-  userWeeklyWaterData += weekData.map(day => ` On ${day.date} you drank ${day.numOunces} ounces of water </br>`);
+  const weekData = hydration.findDailyWaterConsumptionByWeek(date);
   const chartLabels = weekData.map(day => day.date);
   const chartData = weekData.map(day => day.numOunces);
   const waterData = {
@@ -126,7 +126,6 @@ function displayUserWeeklySleep(date) {
   const keys = Object.keys(weeklyHoursSlept);
   const hours = keys.map(day => weeklyHoursSlept[day]);
   const quality = keys.map(day => weeklySleepQuality[day]);
-
   const sleepData = {
     labels: keys,
     datasets: [{
@@ -143,14 +142,13 @@ function displayUserWeeklySleep(date) {
       tension: 0.1
     }]
   };
-
   var myLineChart = new Chart(sleepChart, {
-      type: 'line',
-      data: sleepData,
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-      }
+    type: 'line',
+    data: sleepData,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    }
   })
 }
 
@@ -228,5 +226,5 @@ function displayUserWeeklyActivityStats(date) {
       ${userWeeklyActivity}
     </table>
     `
-    userWeeklyActivityStats.innerHTML = chartData.split(',').join('');
+  userWeeklyActivityStats.innerHTML = chartData.split(',').join('');
 }
