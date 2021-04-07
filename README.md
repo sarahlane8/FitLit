@@ -40,11 +40,9 @@ Graphs and tables are utilized when appropriate to help the user interpret the i
 When creating the dashboard, consideration was given to ensure the dashboard would be accessible to all users.  Luminance and color contrast were examined for users that are colorblind.  Semantic HTML was utilized to help users using voiceover technology.  The WAVE Evaluation Tool and Lighthouse tool were utilized to evaluate the UI's accessibility.
 
 ## Resources
-
-resources
-MDN
-wave audit tool
-lighthouse
+  * MDN Web Docs
+  * WAVE Evaluation Tool
+  * Lighthouse
 
 
 Technologies Used
