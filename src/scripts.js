@@ -1,13 +1,19 @@
-const header = document.getElementById('header');
-const userInfoCard = document.getElementById('userInfoCard');
-const userStepGoals = document.getElementById('userStepGoals');
+//Class Instances
 const userRepository = new UserRepository(userData);
 const user1 = new User(userRepository.users[0]);
 const hydrationRepository = new HydrationRepository(hydrationData);
 const hydration = new Hydration(hydrationRepository.findHydrationUserData(1));
-const userDailyWater = document.getElementById('userDailyWater');
 const sleepRepository = new SleepRepository(sleepData)
 const sleep = new Sleep(sleepRepository.findSleepUserData(1))
+const activityRepository = new ActivityRepository(activityData);
+const activity = new Activity(activityRepository.findActivityUserData(1));
+
+
+//Query Selectors
+const header = document.getElementById('header');
+const userInfoCard = document.getElementById('userInfoCard');
+const userStepGoals = document.getElementById('userStepGoals');
+const userDailyWater = document.getElementById('userDailyWater');
 const userTodaySleep = document.getElementById('userTodaySleep');
 const userSleepAverage = document.getElementById('userSleepAverage');
 const userDailyNumSteps = document.getElementById('userDailyNumSteps');
@@ -15,18 +21,15 @@ const userDailyNumMinutesActive = document.getElementById('userDailyNumMinutesAc
 const userDailyDistanceWalked = document.getElementById('userDailyDistanceWalked');
 const userActivityDailyComparison = document.getElementById('userActivityDailyComparison');
 const userWeeklyActivityStats = document.getElementById('userWeeklyActivityStats');
-const activityRepository = new ActivityRepository(activityData);
-const activity = new Activity(activityRepository.findActivityUserData(1));
 const waterChart = document.getElementById('waterChart');
 const sleepChart = document.getElementById('sleepChart');
 
 
-
-
-//event listeners
+//Event Listeners
 window.addEventListener('load', manageLoadingFunctions)
 
 
+//Functions
 function manageLoadingFunctions() {
   displayUserGreeting(user1);
   displayUserInfoCard(user1);
