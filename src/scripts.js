@@ -55,6 +55,7 @@ function displayUserInfoCard(user) {
   let userFriendNames = userFriendList.map(friend => friend.name)
   userInfoCard.innerHTML =
     `
+    <h2>User Information</h2>
     <h3>${user.name}</h3>
     <p>Address: ${user.address}</p>
     <p>Daily Step Goal: ${user.dailyStepGoal}</p>
