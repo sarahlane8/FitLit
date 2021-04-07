@@ -51,14 +51,11 @@ When creating the dashboard, consideration was given to ensure the dashboard wou
   * HTML
   * JavaScript
 
-
-future considerations
-refactor code to be DRY and SRP
-consider more sad paths for TDD
-change the user
-let the user choose a date to pull data from
-
-
+## Future Considerations
+  * Refactor code to follow SRP(single responsibility principle)
+  * Add to TDD testing suites to evaluate more sad paths
+  * Make the UI interactive so new users can display their information
+  * Include a dropdown calendar so a user can change the date of the information displaying
 
 ## Contributors
   * Marceline Ball [GitHub Profile](https://github.com/MarcelineBall)
