@@ -1,6 +1,6 @@
-// const dayjs = require('dayjs');
-// const isBetween = require('dayjs/plugin/isBetween');
-// dayjs.extend(isBetween);
+const dayjs = require('dayjs');
+const isBetween = require('dayjs/plugin/isBetween');
+dayjs.extend(isBetween);
 
 class Activity {
   constructor(data) {
@@ -58,11 +58,10 @@ class Activity {
 
   findStairClimbingRecord() {
     const sortedStairsData = this.userData.sort((a, b) => {
-      return b.flightsOfStairs - a.flightsOfStairs
+      return b.flightsOfStairs - a.flightsOfStairs;
     });
     return sortedStairsData[0].flightsOfStairs;
   }
-
 }
 
 
