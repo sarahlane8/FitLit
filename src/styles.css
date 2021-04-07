@@ -39,22 +39,19 @@ div {
 }
 
 .step-goal-widget {
-  border: 1px solid black;
+  border: 7px solid #8D686E;
 }
 
 .water-widget {
-  border: 1px solid black;
-  /* background: #B5BDB3; */
+  border: 7px solid #BF635F;
 }
 
 .sleep-widget {
-  /* background: #D89A9E; */
-  border: 1px solid black;
+  border: 7px solid #8A9787;
 }
 
 .activity-widget {
-  /* background: #846267; */
-  border: 1px solid black;
+  border: 7px solid #7E3A4E;
 }
 
 .chart-container {
