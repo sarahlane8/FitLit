@@ -32,7 +32,7 @@ The widgets are grouped by border color to display information in the following 
   * Step Goal  
   * Hydration
   * Sleep
-  * Activity
+  * Activity  
 Graphs and tables are utilized when appropriate to help the user interpret the information.
 
 
@@ -45,6 +45,7 @@ When creating the dashboard, consideration was given to ensure the dashboard wou
   * Lighthouse
 
 ## Technologies Used
+  * Day.js 
   * Chart.js
   * ESLint
   * CSS
