@@ -6,11 +6,9 @@ const user1 = new User(userRepository.users[0]);
 const hydrationRepository = new HydrationRepository(hydrationData);
 const hydration = new Hydration(hydrationRepository.findHydrationUserData(1));
 const userDailyWater = document.getElementById('userDailyWater');
-const userWeeklyWater = document.getElementById('userWeeklyWater');
 const sleepRepository = new SleepRepository(sleepData)
 const sleep = new Sleep(sleepRepository.findSleepUserData(1))
 const userTodaySleep = document.getElementById('userTodaySleep');
-const userWeeklyHoursSlept = document.getElementById('userWeeklyHoursSlept');
 const userSleepAverage = document.getElementById('userSleepAverage');
 const userDailyNumSteps = document.getElementById('userDailyNumSteps');
 const userDailyNumMinutesActive = document.getElementById('userDailyNumMinutesActive');
@@ -82,9 +80,7 @@ function displayUserDailyWater(date) {
 }
 
 function displayUserWeeklyWater(date) {
-  const weekData = hydration.findDailyWaterConsumptionByWeek(date);//an array with 7 objects
-  let userWeeklyWaterData = '';
-  userWeeklyWaterData += weekData.map(day => ` On ${day.date} you drank ${day.numOunces} ounces of water </br>`);
+  const weekData = hydration.findDailyWaterConsumptionByWeek(date);
   const chartLabels = weekData.map(day => day.date);
   const chartData = weekData.map(day => day.numOunces);
   const waterData = {
@@ -127,7 +123,6 @@ function displayUserWeeklySleep(date) {
   const keys = Object.keys(weeklyHoursSlept);
   const hours = keys.map(day => weeklyHoursSlept[day]);
   const quality = keys.map(day => weeklySleepQuality[day]);
-
   const sleepData = {
     labels: keys,
     datasets: [{
@@ -144,14 +139,13 @@ function displayUserWeeklySleep(date) {
       tension: 0.1
     }]
   };
-
   var myLineChart = new Chart(sleepChart, {
-      type: 'line',
-      data: sleepData,
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-      }
+    type: 'line',
+    data: sleepData,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    }
   })
 }
 
@@ -229,5 +223,5 @@ function displayUserWeeklyActivityStats(date) {
       ${userWeeklyActivity}
     </table>
     `
-    userWeeklyActivityStats.innerHTML = chartData.split(',').join('');
+  userWeeklyActivityStats.innerHTML = chartData.split(',').join('');
 }
