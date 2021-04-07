@@ -25,8 +25,21 @@ View our application [here!](https://sarahlane8.github.io/FitLit/)
 
 *Some class files have commented out code.  To evaluate TDD, please comment these lines back in before running the tests for those files.
 
+## User Interaction
+The page is mainly divided with the user's personal information card on the left hand side, and the widget section to the right.   
 
-accessibility: contrast/color luminance were considered
+The widgets are grouped by border color to display information in the following categories:
+  * Step Goal  
+  * Hydration
+  * Sleep
+  * Activity
+Graphs and tables are utilized when appropriate to help the user interpret the information.
+
+
+## Accessibility
+When creating the dashboard, consideration was given to ensure the dashboard would be accessible to all users.  Luminance and color contrast were examined for users that are colorblind.  Semantic HTML was utilized to help users using voiceover technology.  The WAVE Evaluation Tool and Lighthouse tool were utilized to evaluate the UI's accessibility.
+
+## Resources
 
 resources
 MDN
