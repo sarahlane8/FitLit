@@ -60,7 +60,7 @@ let the user choose a date to pull data from
 
 
 
-contributors
-Github page (https://github.com/sarahlane8/FitLit)  
-
-name and github profile
+## Contributors
+  * Marceline Ball [GitHub Profile](https://github.com/MarcelineBall)
+  * Sarah Lane [GitHub Profile](https://github.com/sarahlane8)
+  * [Project Repository](https://github.com/sarahlane8/FitLit)  
