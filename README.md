@@ -12,14 +12,19 @@ We implemented media queries to apply breakpoints to our dashboard design to ens
 
 PICTURE OF DASHBOARD AND GIF HERE
 
-Feel free to look around our deployed GitHub Pages [here!](https://sarahlane8.github.io/FitLit/)
+View our application [here!](https://sarahlane8.github.io/FitLit/)
 
-##install
-how to install
-clone down(use code block)
-run npm install to install dependencies
-how to open index.html
-how to run tests *uncomment the top lines of code on TDD**
+## Install
+  * From your terminal, clone the repo  
+`$git clone git@github.com:sarahlane8/FitLit.git`  
+  * Move into the root directory of the project  
+  * Now you must install the required npm dependencies  
+  `$npm install`
+  * Open the application and enjoy!
+  `open index.html`  
+
+*Some class files have commented out code.  To evaluate TDD, please comment these lines back in before running the tests for those files.
+
 
 accessibility: contrast/color luminance were considered
 
@@ -47,5 +52,6 @@ let the user choose a date to pull data from
 licensing?
 
 contributors
+Github page (https://github.com/sarahlane8/FitLit)  
 
 name and github profile
