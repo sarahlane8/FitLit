@@ -36,6 +36,7 @@ The widgets are grouped by border color to display information in the following 
   * Hydration
   * Sleep
   * Activity  
+  
 Graphs and tables are utilized when appropriate to help the user interpret the information.
 
 
