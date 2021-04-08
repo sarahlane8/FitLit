@@ -8,10 +8,11 @@ Welcome to FitLit! The purpose of this project was to interpret provided health-
   * Writing reusable code that follows SRP
   * Implementing a testing suite using test driven development  
 
-We implemented media queries to apply breakpoints to our dashboard design to ensure users could view it across multiple devices.
-<p align="center">
-  <img width="400" alt="image of user dashboard" src="https://user-images.githubusercontent.com/70901622/113950164-efab4180-97cd-11eb-9b4f-39ed1d6272e8.png">
-</p>
+  We implemented media queries to apply breakpoints to our dashboard design to ensure users could view it across multiple devices.  
+
+  <img width="480" alt="image of user dashboard" src="https://user-images.githubusercontent.com/70901622/113950164-efab4180-97cd-11eb-9b4f-39ed1d6272e8.png">  
+
+  ![Demo](https://media.giphy.com/media/ZOt9dt7LbedLNQoZHR/giphy.gif)
 
 
 View our application [here!](https://sarahlane8.github.io/FitLit/)
