@@ -9,8 +9,10 @@ Welcome to FitLit! The purpose of this project was to interpret provided health-
   * Implementing a testing suite using test driven development  
 
 We implemented media queries to apply breakpoints to our dashboard design to ensure users could view it across multiple devices.
+<p align="center">
+  <img width="400" alt="image of user dashboard" src="https://user-images.githubusercontent.com/70901622/113950164-efab4180-97cd-11eb-9b4f-39ed1d6272e8.png">
+</p>
 
-PICTURE OF DASHBOARD AND GIF HERE
 
 View our application [here!](https://sarahlane8.github.io/FitLit/)
 
@@ -45,7 +47,7 @@ When creating the dashboard, consideration was given to ensure the dashboard wou
   * Lighthouse
 
 ## Technologies Used
-  * Day.js 
+  * Day.js
   * Chart.js
   * ESLint
   * CSS
