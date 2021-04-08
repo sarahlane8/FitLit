@@ -1,82 +1,68 @@
-# FitLit Starter Kit
+# FitLit
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+## Abstract
+Welcome to FitLit! The purpose of this project was to interpret provided health-related user data and display it to a dashboard for a user to see. Specific learning goals of the project included:  
+  * Implementing ES6 classes that communicate as needed
+  * Using object and array prototype methods to perform data manipulation
+  * Creating a responsive dashboard that is clear and easy to use
+  * Writing reusable code that follows SRP
+  * Implementing a testing suite using test driven development  
 
-## Setup
+  We implemented media queries to apply breakpoints to our dashboard design to ensure users could view it across multiple devices.  
 
-1. Within your group, decide on one person to have the project repository (repo) on their GitHub account. Then, that person should fork this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `open src/index.html` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
-1. Make sure both members of your team are collaborators on the forked repo.
+  <img width="480" alt="image of user dashboard" src="https://user-images.githubusercontent.com/70901622/113950164-efab4180-97cd-11eb-9b4f-39ed1d6272e8.png">  
 
-## Testing
+  ![Demo](https://media.giphy.com/media/ZOt9dt7LbedLNQoZHR/giphy.gif)
 
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran `npm install`, then the tooling you need to start testing is already installed (`mocha` and `chai`).
 
-## Linting Your Code
+View our application [here!](https://sarahlane8.github.io/FitLit/)
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit, but that's ok - the linter is still running successfully.
+## Install
+  * From your terminal, clone the repo  
+`$git clone git@github.com:sarahlane8/FitLit.git`  
+  * Move into the root directory of the project  
+  * Now you must install the required npm dependencies  
+  `$npm install`
+  * Open the application and enjoy!
+  `open index.html`  
 
-Your linter will look only at the JavaScript files you have within the `src` and the `test` directories.
+*Some class files have commented out code.  To evaluate TDD, please comment these lines back in before running the tests for those files.
 
-## Data Model
+## User Interaction
+The page is mainly divided with the user's personal information card on the left hand side, and the widget section to the right.   
 
-**Users**
+The widgets are grouped by border color to display information in the following categories:
+  * Step Goal  
+  * Hydration
+  * Sleep
+  * Activity  
+  
+Graphs and tables are utilized when appropriate to help the user interpret the information.
 
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
 
-**Activity**
+## Accessibility
+When creating the dashboard, consideration was given to ensure the dashboard would be accessible to all users.  Luminance and color contrast were examined for users that are colorblind.  Semantic HTML was utilized to help users using voiceover technology.  The WAVE Evaluation Tool and Lighthouse tool were utilized to evaluate the UI's accessibility.
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
+## Resources
+  * MDN Web Docs
+  * WAVE Evaluation Tool
+  * Lighthouse
 
-**Hydration**
+## Technologies Used
+  * Day.js
+  * Chart.js
+  * ESLint
+  * CSS
+  * HTML
+  * JavaScript
 
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
+## Future Considerations
+  * Refactor code to follow SRP(single responsibility principle)
+  * Add to TDD testing suites to evaluate more sad paths
+  * Make the UI interactive so new users can display their information
+  * Include a dropdown calendar so a user can change the date of the information displaying
 
-**Sleep**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
+## Contributors
+  * Marceline Ball [GitHub Profile](https://github.com/MarcelineBall)
+  * Sarah Lane [GitHub Profile](https://github.com/sarahlane8)
+  * [Project Repository](https://github.com/sarahlane8/FitLit)  
